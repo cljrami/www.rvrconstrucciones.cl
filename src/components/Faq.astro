@@ -1,0 +1,53 @@
+---
+import Preguntas from "../components/Preguntas.astro";
+---
+
+<section class="px-2 py-10" id="faq">
+  <div class="relative overflow-hidden rounded-3xl">
+    <div class="relative w-full md:max-w-4xl mx-auto">
+      <div class="mb-10">
+        <span
+          class="inline-block mb-5 text-md text-yellow-400 font-bold uppercase tracking-widest"
+          >¿Tienes alguna pregunta?</span
+        >
+        <h2
+          class="font-heading text-4xl text-mygray lg:text-5xl font-bold font-heading"
+        >
+          Preguntas Frecuentes
+        </h2>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <p>
+            <Preguntas
+              pregunta="¿Por qué elegirnos?"
+              respuesta="<p>Nos aseguramos de cumplir las expectativas y necesidades en cada obra.</p><p>Empleamos siempre materiales de calidad, un servicio de primera y otorgamos garantía a cada uno de nuestros trabajos.</p><p><Nuestros colaboradores comparten valores de probidad, integridad, puntualidad y trabajo en equipo</p>"
+            />
+          </p>
+
+          <Preguntas
+            pregunta="¿Realizan trabajos a persona naturales?"
+            respuesta="En estos momentos estamos desplegados en distintas obras de empresas mandantes, pero cuéntanos en que te podemos ayudar"
+          />
+          <Preguntas
+            pregunta="¿RVR es una empresa que le de oportunidades a alumnos en practica?"
+            respuesta="En estos momentos no estamos con ningún proyecto que requiera de alumnos en práctica, pero deben estar atentos /as , dado que publicaremos por esta vía en caso de requerir"
+          />
+
+          <Preguntas
+            pregunta="¿Cómo puedo solicitar los servicios de RVR Ingeniería y Construcciones SpA?"
+            respuesta="Dirígete a la sección Contáctanos, déjanos tus datos y tipo de requerimiento, para que nuestro equipo pueda evaluar y comunicarse con ustedes."
+          />
+          <Preguntas
+            pregunta="¿Tienen capacidad y cobertura para desarrollar algún proyecto en Minería?"
+            respuesta="Efectivamente nuestros líderes de equipos, tienen una basta experiencia en Minería, no tenemos inconveniente en ser parte de proyectos mineros tanto en Chile como en el extranjero."
+          />
+          <Preguntas
+            pregunta="¿En que regiónes realizan servicios?"
+            respuesta="Actualmente desarrollamos proyectos entre la región de Ñuble hasta la Araucanía, pero estamos abiertos a evaluar tu proyecto, dirígete a la sección Contáctanos y déjanos tus inquietudes"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

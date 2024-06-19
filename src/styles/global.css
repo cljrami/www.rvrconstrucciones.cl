@@ -1,0 +1,18 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
+body {
+    font-family: 'Inter';
+    color:#fff;
+
+    background-color: #0f172a;
+    
+}
+
+html {
+    overflow-x: hidden;
+}
+
+

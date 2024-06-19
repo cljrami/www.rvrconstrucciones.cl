@@ -1,0 +1,51 @@
+---
+import "../../src/styles/global.css";
+import NavBar from "../components/Navbar/NavBar.astro";
+const navLinks = [
+  { href: "https://www.rvrconstrucciones.cl", label: "Inicio" },
+  {
+    href: "https://www.rvrconstrucciones.cl/nuestra-empresa",
+    label: "Nosotros",
+  },
+  {
+    href: "https://www.rvrconstrucciones.cl/#faq",
+    label: "Preguntas Frecuentes",
+  },
+  { href: "https://www.rvrconstrucciones.cl/#servicios", label: "Servicios" },
+  { href: "https://www.rvrconstrucciones.cl/#contacto", label: "Contáctanos" },
+];
+
+import Footer from "../components/Footer.astro";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import GoogleAnalitycs from "../components/GoogleAnalitycs.astro";
+import Favicon from "../components/Favicon.astro";
+---
+
+<html lang="es" class="scroll-smooth focus:scroll-auto">
+  <Favicon />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <!--GOGOLE FONTS -->
+  <!-- Establece una conexión temprana con el origen de Google Fonts -->
+  <GoogleAnalitycs />
+  <GoogleFontsOptimizer
+    url="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap async"
+  />
+
+  <body>
+    <slot />
+    <header>
+      <nav>
+        <NavBar
+          logoSrc="/Imagenes/Logos/logo.webp"
+          logoAlt="Logo de Mi Sitio"
+          links={navLinks}
+        />
+      </nav>
+    </header>
+
+    <Footer />
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

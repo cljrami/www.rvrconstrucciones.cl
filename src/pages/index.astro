@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { AstroSeo } from "@astrolib/seo";
+
+import Hero from "../components/Heros/Hero.astro";
+import Faq from "../components/Faq.astro";
+import SliderProyectos from "../components/Sliders/SliderProyectos.jsx";
+import "../components/Sliders/SliderProyectos.css";
+import SliderTestimonios from "../components/Sliders/SliderTestimonios.jsx";
+import "../components/Sliders/SliderTestimonios.css";
+import Servicios from "../components/Servicios.astro";
+import Contacto from "../components/Contacto.astro";
+import Valores from "../components/Valores.astro";
+import Cta from "../components/Cta/Cta.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <AstroSeo
+      title="Verdaderos Expertos En Construccion y Proyectos Relacionados"
+      description=""
+      canonical="https://www.rvrconstrucciones.cl/"
+      openGraph={{
+        url: "https://www.rvrconstrucciones.cl/",
+        type: "website",
+        title: "Verdaderos Expertos En Construccion y Proyectos Relacionados",
+        description:
+          "Somos una Empresa dedicada al Servicio de Ingeniería, Construcción y Mantenimiento de Infraestructura",
+        images: [
+          {
+            url: "https://www.rvrconstrucciones.cl/OgImage.webp",
+            width: 1240,
+            height: 630,
+            alt: "",
+            type: "image/webp",
+          },
+        ],
+        site_name: "",
+      }}
+      twitter={{
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+      }}
+    />
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "",
+            "item": "www.rvrconstrucciones.cl"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <Layout title="">
+    <main>
+      <Hero
+        encabezado="Desde el año 2010"
+        h1="Mejoramos Tu Experiencia"
+        h2="en cada proyecto"
+        h3="Somos una empresa dedicada al Servicio de Ingeniería y construcción"
+        backgroundImage="/Imagenes/heroes/RvrHero.webp"
+        sectionClasses="relative h-screen w-full m-0 p-0"
+        backgroundImageClasses="object-cover object-center w-full h-screen filter"
+        overlayClasses="absolute inset-0 bg-slate-900 opacity-90"
+        containerClasses="absolute inset-0 flex flex-col justify-center md:ml-16 ml-5 md:w-[650px] w-[400px] "
+        encabezadoClasses="text-white"
+        h1Classes="text-5xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-8x1 text-yellow-400 font-bold"
+        h2Classes="tracking-tight text-2xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-8x1 text-slate-50"
+        h3Classes="text-xl text-white mt-4 md:w-[500px] w-[300px]"
+      />
+
+      <Servicios />
+      <Valores />
+      <SliderProyectos client:load />
+      <Faq />
+      <SliderTestimonios client:load />
+
+      <Cta
+        sectionClasses="px-2 py-10"
+        h2="Han Confiado en nosotros"
+        h2Classes="text-base font-semibold text-yellow-400 tracking-wide uppercase "
+        btnClasses="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-bold rounded-md text-black bg-yellow-400 hover:bg-green-900 hover:text-white focus:outline-none focus:shadow-outline"
+        txtBtn="Descarga Nuestro Brochure 2024"
+      />
+      <Contacto />
+    </main>
+  </Layout>
+
+
+</html>

@@ -1,0 +1,8 @@
+---
+const { text, iconClass, additionalClasses = "" } = Astro.props;
+---
+
+<button class={`  ${additionalClasses}`}>
+  <i class={`fa ${iconClass}`}></i>
+  <span>{text}</span>
+</button>

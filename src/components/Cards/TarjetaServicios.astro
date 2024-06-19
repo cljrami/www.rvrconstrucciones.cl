@@ -1,0 +1,44 @@
+---
+const {
+  servicio,
+  imagen,
+  alt_image,
+  url,
+  desc_servicio,
+  titulo,
+  iconClass,
+  additionalClasses,
+} = Astro.props;
+---
+
+<a href={url}>
+  <article
+    class="flex flex-col justify-center antialiased bg-gray-700 p-4 rounded-md"
+  >
+    <img src={imagen} class="w-full z-0" alt={alt_image} />
+    <!-- Card -->
+    <div class="rounded-b-lg">
+      <div class="pl-3 pt-2">
+        <div class="flex items-start">
+          <!-- Icon -->
+          <!-- Card content -->
+          <div class="flex-grow truncate">
+            <!-- Card header -->
+            <div class="w-full sm:flex justify-between items-center">
+              <!-- Title -->
+
+              <h2
+                class="text-white transition-all duration-300 font-semibold tracking-tight text-[20px] sm:text-[20px] md:text-2xl lg:text-[20px]"
+              >
+                {servicio}
+              </h2>
+
+              <!-- Like and comment buttons -->
+            </div>
+            <!-- Card body -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</a>

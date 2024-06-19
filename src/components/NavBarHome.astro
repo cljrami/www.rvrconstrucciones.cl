@@ -1,0 +1,135 @@
+---
+
+---
+
+<div
+  id="navbar"
+  class="z-10 fixed top-0 left-0 w-full font-semibold text-white"
+>
+  <nav class="flex justify-between items-center p-4">
+    <a href="/" class="text-xl font-bold">
+      <img
+        src="/Imagenes/Logos/logo.webp"
+        alt=""
+        class="max-w-[50px] h-auto"
+        loading="lazy"
+      />
+    </a>
+    <button id="menu-btn" class="md:hidden">
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+    <ul id="menu" class="hidden md:flex md:flex-row items-center">
+      <li class="p-2">
+        <a href="#faq" class="block hover:text-orange-600"
+          >Preguntas Frecuentes</a
+        >
+      </li>
+      <li class="p-2">
+        <a href="" class="block">Nosotros</a>
+      </li>
+      <li class="p-2">
+        <a href="#contacto" class="block">Contáctanos</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div
+  id="sidebar"
+  class="fixed inset-0 bg-slate-900 bg-opacity-10 backdrop-blur-lg hidden z-50"
+>
+  <div class="relative min-h-full w-80 bg-white text-gray-800">
+    <button id="close-btn" class="absolute top-0 right-0 p-4">
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <ul class="flex flex-col items-start p-4">
+      <li class="p-2 text-lg">
+        <a href="#faq" class="block">Nosotros</a>
+      </li>
+      <li class="p-2 text-lg">
+        <a href="#faq" class="block">Preguntas Frecuentes</a>
+      </li>
+      <li class="p-2 text-lg">
+        <a href="" class="block">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar");
+    const menuBtn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("close-btn");
+    const sidebarLinks = sidebar ? sidebar.querySelectorAll("a") : [];
+    let lastScrollY = window.scrollY;
+
+    if (menuBtn && sidebar) {
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden"); // Alternar visibilidad al hacer clic
+      });
+    }
+
+    if (closeBtn && sidebar) {
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.add("hidden"); // Asegurarse de que el sidebar se oculte al hacer clic en el botón de cerrar
+      });
+    }
+
+    if (sidebarLinks) {
+      sidebarLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (sidebar) {
+            sidebar.classList.add("hidden"); // Cerrar el sidebar al hacer clic en un enlace
+          }
+        });
+      });
+    }
+
+    if (navbar) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > lastScrollY) {
+          navbar.style.transform = "translateY(-100%)";
+        } else {
+          navbar.style.transform = "translateY(0)";
+          navbar.style.backgroundColor =
+            window.scrollY > 100 ? "rgba(32, 38, 49, 0.9)" : "transparent";
+          navbar.style.backdropFilter =
+            window.scrollY > 100 ? "blur(10px)" : "none";
+
+          // Cambiar el color del texto
+          if (window.scrollY > 100) {
+            navbar.classList.remove("text-white");
+            navbar.classList.add("text-white");
+          } else {
+            navbar.classList.remove("text-black");
+            navbar.classList.add("text-white");
+          }
+        }
+        lastScrollY = window.scrollY;
+      });
+    }
+  });
+</script>

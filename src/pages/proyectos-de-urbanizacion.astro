@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { AstroSeo } from "@astrolib/seo";
+import SliderProyectos from "../components/Sliders/SliderProyectos.jsx";
+import "../components/Sliders/SliderProyectos.css";
+
+import Contenturnanizacion from "../components/content/Contenturnanizacion.astro";
+
+import HeroServicios from "../components/HeroServicios.astro";
+import Breadcrumb from "../components/breadcrumb.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <AstroSeo
+      title="Verdaderos Expertos En Construccion y Proyectos Relacionados"
+      description=""
+      canonical="https://www.rvrconstrucciones.cl/"
+      openGraph={{
+        url: "https://www.rvrconstrucciones.cl/",
+        type: "website",
+        title: "Verdaderos Expertos En Construccion y Proyectos Relacionados",
+        description:
+          "Somos una Empresa dedicada al Servicio de Ingeniería, Construcción y Mantenimiento de Infraestructura",
+        images: [
+          {
+            url: "https://www.rvrconstrucciones.cl/OgImage.webp",
+            width: 1240,
+            height: 630,
+            alt: "",
+            type: "image/webp",
+          },
+        ],
+        site_name: "",
+      }}
+      twitter={{
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+      }}
+    />
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "",
+            "item": "www.rvrconstrucciones.cl"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <Layout title="">
+    <main>
+      <Breadcrumb
+        link_home="https://www.rvrconstrucciones.cl"
+        seccion_actual="Proyectos De Urbanización"
+        link_seccion_actual="https://www.rvrconstrucciones.cl/proyectos-de-urbanizacion"
+        iconClass="fas fa-house"
+        additionalClasses=" px-20 inline-flex items-center font-medium text-gray-700"
+      />
+      <HeroServicios
+        textoChip="Nuestros Servicios"
+        classChip="font-semibold p-3 rounded-lg bg-yellow-500"
+        textoServicio="Proyectos De Urbanización"
+        classtextoServicio="tracking-tight text-5xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-8x1 font-bold text-yellow-400 mt-4"
+        descripcionServicio="Gerenciamiento y desarrollo de proyectos, para empresas del sector público y privado, industrias y particulares"
+        classdescripcionServicio="max-w-md mt-5"
+      />
+      <Contenturnanizacion />
+      <SliderProyectos client:load />
+    </main>
+  </Layout>
+
+
+</html>

@@ -1,0 +1,70 @@
+---
+import TarjetaServicios from "./Cards/TarjetaServicios.astro";
+---
+
+<section
+  id="servicios"
+  class="bg-slate-900 border-t border-b border-neutral-900 bg-neutral-900/900 px-2 py-10"
+>
+  <div class="relative mx-auto text-center">
+    <h2
+      class="block w-full font-bold tracking-tight text-5xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-8x1"
+    >
+      Nuestros Servicios
+    </h2>
+    <p
+      class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400"
+    >
+      Gerenciamiento y desarrollo de proyectos para empresas del sector público
+      y privado, industrias y particulares.
+    </p>
+  </div>
+
+  <div
+    class="relative mx-auto max-w-5xl grid grid-cols-1 gap-4 pt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
+    data-aos="fade-up"
+    dats-aos-duration="3000"
+    data-aos-delay="10"
+    data-aos-mirror="true"
+    data-aos-once="false"
+  >
+    <TarjetaServicios
+      titulo="Servicios"
+      iconClass="fas fa-house-chimney-crack text-yellow-400"
+      imagen="/Imagenes/Servicios/Ingenieria_y_Construccion_RVR.webp"
+      alt_image="Nuetros Servicios - Ingenieria y Construcción"
+      servicio="Ingeniería y Construcción"
+      url="ingenieria-y-construccion"
+      ver_mas="Detalles"
+    />
+    <TarjetaServicios
+      titulo="Servicios"
+      iconClass="fas fa-crosshairs text-yellow-400"
+      imagen="/Imagenes/Servicios/Mantencion_preventiva_de_equipos.webp"
+      alt_image="Nuetros Servicios - Ingenieria y Construcción"
+      servicio="Mantención Preventiva"
+      url="mantencion-preventiva-y-correctiva"
+      ver_mas="Detalles"
+    />
+    <TarjetaServicios
+      titulo="Servicios"
+      iconClass="fas fa-city text-yellow-400"
+      imagen="/Imagenes/Servicios/Proyectos_de_Urbanizacion.webp"
+      alt_image="Nuetros Servicios - Ingenieria y Construcción"
+      servicio="Proyectos De Urbanización"
+      url="proyectos-de-urbanizacion"
+      ver_mas="Detalles"
+    />
+  </div>
+
+  <div
+    class="absolute bottom-0 left-0 z-0 h-1/3 w-full border-b"
+    style="background-image: linear-gradient(to right top, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 z-0 h-1/3 w-full"
+    style="background-image: linear-gradient(to left top, rgba(220, 38, 38, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);"
+  >
+  </div>
+</section>

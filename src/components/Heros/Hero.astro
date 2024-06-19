@@ -1,0 +1,71 @@
+---
+export interface Props {
+  encabezado: string;
+  h1: string;
+  h2: string;
+  h3: string;
+  p: string;
+  backgroundImage: string;
+  encabezadoClasses: string;
+  backgroundImageClasses: string;
+  sectionClasses?: string;
+  overlayClasses?: string;
+  containerClasses?: string;
+  subtitleClasses?: string;
+  h1Classes?: string;
+  h2Classes?: string;
+  h3Classes?: string;
+
+  pClasses?: string;
+}
+
+const {
+  sectionClasses,
+  backgroundImage,
+  backgroundImageClasses,
+  overlayClasses = "",
+  encabezado,
+  encabezadoClasses = "",
+  h1,
+  h1Classes = "",
+  h2,
+  h2Classes = "",
+  h3,
+  h3Classes = "",
+  p,
+  pClasses = "",
+
+  containerClasses = "",
+} = Astro.props;
+---
+
+<section class={`${sectionClasses}`} id="hero">
+  <img
+    src={backgroundImage}
+    alt="Mantenciones de Techumbres"
+    class={`${backgroundImageClasses}`}
+  />
+  <div class={` ${overlayClasses}`}></div>
+
+  <div
+    class={`${containerClasses}`}
+    data-aos="zoom-in-right"
+    data-aos-delay="10"
+    data-aos-mirror="true"
+    data-aos-once="false"
+  >
+    <div class={`${encabezadoClasses}`}>
+      {encabezado}
+    </div>
+
+    <h1 class={` ${h1Classes}`}>
+      {h1}
+    </h1>
+    <h2 class={` ${h2Classes}`}>
+      {h2}
+    </h2>
+    <h3 class={` ${h3Classes}`}>
+      {h3}
+    </h3>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+// ContactForm.astro
+export interface Props {
+  textoChip?: string;
+  classChip?: string;
+  textoServicio?: string;
+  classtextoServicio?: string;
+  descripcionServicio?: string;
+  classdescripcionServicio?: string;
+}
+
+const {
+  textoChip = "",
+  classChip = "",
+  textoServicio = "",
+  classtextoServicio = "",
+  descripcionServicio = "",
+  classdescripcionServicio = "",
+} = Astro.props;
+---
+
+<section class="py-10 px-4 md:px-20">
+  <span class={classChip}>{textoChip}</span>
+  <h1 class={classtextoServicio}>{textoServicio}</h1>
+  <p class={classdescripcionServicio}>{descripcionServicio}</p>
+</section>

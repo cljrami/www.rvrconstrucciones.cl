@@ -1,0 +1,21 @@
+---
+const {
+  href,
+  src,
+  alt,
+  loading,
+  target,
+  title,
+  additionalClasses = "",
+} = Astro.props;
+---
+
+<a href={href} target={target}>
+  <img
+    class={`  ${additionalClasses}`}
+    src={src}
+    alt={alt}
+    loading={loading}
+    title={title}
+  />
+</a>

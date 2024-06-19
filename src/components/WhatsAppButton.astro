@@ -1,0 +1,19 @@
+---
+interface Props {
+  numeroTelefono: string; // Número de teléfono de WhatsApp
+  mensajeBoton: string; // Texto del botón
+  mensajePersonalizado?: string; // Mensaje personalizado para enviar por WhatsApp
+  clases: string; // Clases adicionales para personalizar el estilo del botón
+}
+const { numeroTelefono, mensajeBoton, mensajePersonalizado, clases } =
+  Astro.props;
+---
+
+<a
+  href={`https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensajePersonalizado ?? "")}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`bg-green-500 text-white font-bold py-2 px-4 rounded ${clases}`}
+>
+  {mensajeBoton}
+</a>

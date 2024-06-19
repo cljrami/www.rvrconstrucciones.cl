@@ -1,0 +1,49 @@
+---
+// Define el número de WhatsApp aquí o impórtalo desde un archivo de configuración
+const whatsappNumber = "1234567890"; // Sustituye por tu número real
+const message = encodeURIComponent(
+  "Hola, estoy interesado en más información!"
+);
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+---
+
+<a
+  href={whatsappLink}
+  title="Contáctanos Por WhatsApp"
+  aria-label="Nuestro WhatsApp"
+  target="_blank"
+  id="whatsapp-btn"
+  class="fixed bottom-4 right-4 flex items-center justify-center bg-white rounded-full shadow-lg p-2 cursor-pointer border-4 border-transparent hover:border-green-500 transition-all duration-300"
+  style="opacity: 0; visibility: hidden;"
+>
+  <div
+    class="h-10 w-10 rounded-full flex items-center justify-center bg-[url('https://www.ahoranow.cl/Imagenes/contacto_con_ahoranow.webp')] bg-no-repeat bg-center bg-cover"
+  >
+    <!-- Aquí estaba el SVG, ahora eliminado -->
+  </div>
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const whatsappBtn = document.getElementById("whatsapp-btn");
+
+    // Asegurarse de que el botón existe antes de adjuntar el manejador de eventos
+    if (whatsappBtn) {
+      window.addEventListener("scroll", function () {
+        // Verificar si el scroll es más de 500px
+        if (window.scrollY > 500) {
+          whatsappBtn.style.visibility = "visible";
+          whatsappBtn.style.opacity = "1";
+          whatsappBtn.style.transition = "opacity 0.5s ease-in-out";
+        } else {
+          whatsappBtn.style.opacity = "0";
+          whatsappBtn.style.visibility = "hidden";
+          whatsappBtn.style.transition =
+            "opacity 0.5s ease-in-out, visibility 0s 0.5s"; // Retrasa la 'visibility' hasta que la opacidad termine
+        }
+      });
+    } else {
+      console.error("The WhatsApp button element was not found in the DOM.");
+    }
+  });
+</script>

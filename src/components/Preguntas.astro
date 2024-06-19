@@ -1,0 +1,41 @@
+---
+interface Props {
+  pregunta: string;
+  respuesta: string;
+}
+
+const { pregunta, respuesta } = Astro.props;
+---
+
+<div class="flex flex-wrap mb-5">
+  <div class="flex-1 p-5 bg-white rounded-md w-full">
+    <details class="group">
+      <summary
+        class="flex justify-between items-center font-medium cursor-pointer list-none"
+      >
+        <h3 class="font-heading text-md text-black font-medium">
+          {pregunta}
+        </h3>
+        <span class="transition group-open:rotate-180">
+          <svg
+            fill="#000"
+            height="24"
+            shape-rendering="geometricPrecision"
+            stroke="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            width="24"
+          >
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </span>
+      </summary>
+      <div
+        class="text-black group-open:animate-fadeIn mt-1"
+        set:html={respuesta}
+      />
+    </details>
+  </div>
+</div>

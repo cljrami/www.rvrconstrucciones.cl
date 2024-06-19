@@ -1,0 +1,30 @@
+---
+const {
+  link_home,
+  seccion_actual,
+  link_seccion_actual,
+  iconClass,
+  additionalClasses = "",
+} = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" role="navigation" class={`  ${additionalClasses}`}>
+  <ul class="flex flex-wrap items-center my-1 pt-20">
+    <li class="inline-flex items-center">
+      <a
+        href={link_home}
+        aria-label="home"
+        class="inline-flex items-center font-medium text-white"
+      >
+        <i class={`fa ${iconClass} `}></i>
+      </a>
+    </li>
+
+    <li class="flex items-center">
+      <span class="px-1 text-lg text-white">></span>
+      <a href={link_seccion_actual} class="font-medium text-white underline">
+        {seccion_actual}
+      </a>
+    </li>
+  </ul>
+</nav>
