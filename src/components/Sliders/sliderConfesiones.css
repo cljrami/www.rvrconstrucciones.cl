@@ -1,0 +1,28 @@
+
+
+
+.sliderConfesiones{
+    
+    cursor: ew-resize;
+}
+
+.sliderConfesiones .swiper {
+    width: 100%;
+
+
+}
+
+.sliderConfesiones .swiper-slide {
+
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.sliderConfesiones .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}

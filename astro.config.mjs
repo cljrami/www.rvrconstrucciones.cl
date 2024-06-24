@@ -22,7 +22,7 @@ export default defineConfig({
     astroMetaTags()
   ],
   outDir: 'public_html/',
-  site: 'https://www.rvrconstrucciones.cl',
+  site: 'https://www.hastalatumba.cl',
  buildOptions: {
     // Configura la política de caché para los recursos estáticos
     cacheControl: {

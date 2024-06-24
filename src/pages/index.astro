@@ -1,17 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
-
+import SliderConfesiones from "../components/Sliders/sliderConfesiones.jsx";
+import "../components/Sliders/sliderConfesiones.css";
+import EstaDisticas from "../components/estaDisticas.astro";
+import PreLoader from "../components/PreLoader.astro";
 import Hero from "../components/Heros/Hero.astro";
-import Faq from "../components/Faq.astro";
-import SliderProyectos from "../components/Sliders/SliderProyectos.jsx";
-import "../components/Sliders/SliderProyectos.css";
-import SliderTestimonios from "../components/Sliders/SliderTestimonios.jsx";
-import "../components/Sliders/SliderTestimonios.css";
-import Servicios from "../components/Servicios.astro";
-import Contacto from "../components/Contacto.astro";
-import Valores from "../components/Valores.astro";
-import Cta from "../components/Cta/Cta.astro";
 ---
 
 <!doctype html>
@@ -23,25 +17,24 @@ import Cta from "../components/Cta/Cta.astro";
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
-      title="Verdaderos Expertos En Construccion y Proyectos Relacionados"
-      description=""
-      canonical="https://www.rvrconstrucciones.cl/"
+      title="La cripta de las confesiones"
+      description="Libérate y cuenta tu secreto que ha nadie le contarías"
+      canonical="https://www.hastalatumba.cl/"
       openGraph={{
-        url: "https://www.rvrconstrucciones.cl/",
+        url: "https://www.hastalatumba.cl/",
         type: "website",
-        title: "Verdaderos Expertos En Construccion y Proyectos Relacionados",
-        description:
-          "Somos una Empresa dedicada al Servicio de Ingeniería, Construcción y Mantenimiento de Infraestructura",
+        title: "La cripta de las confesiones",
+        description: "Libérate y cuenta tu secreto que ha nadie le contarías",
         images: [
           {
-            url: "https://www.rvrconstrucciones.cl/OgImage.webp",
+            url: "https://www.hastalatumba.cl/OgImage.webp",
             width: 1240,
             height: 630,
-            alt: "",
+            alt: "Libérate y cuenta tu secreto que ha nadie le contarías",
             type: "image/webp",
           },
         ],
-        site_name: "",
+        site_name: "Hasta La Tumba",
       }}
       twitter={{
         handle: "@handle",
@@ -58,7 +51,7 @@ import Cta from "../components/Cta/Cta.astro";
             "@type": "ListItem",
             "position": 1,
             "name": "",
-            "item": "www.rvrconstrucciones.cl"
+            "item": "www.hastalatumba.cl"
           }
         ]
       }
@@ -67,36 +60,22 @@ import Cta from "../components/Cta/Cta.astro";
 
   <Layout title="">
     <main>
+      <PreLoader />
       <Hero
-        encabezado="Desde el año 2010"
-        h1="Mejoramos Tu Experiencia"
-        h2="en cada proyecto"
-        h3="Somos una empresa dedicada al Servicio de Ingeniería y construcción"
-        backgroundImage="/Imagenes/heroes/RvrHero.webp"
-        sectionClasses="relative h-screen w-full m-0 p-0"
-        backgroundImageClasses="object-cover object-center w-full h-screen filter"
-        overlayClasses="absolute inset-0 bg-slate-900 opacity-90"
+        h1Text="Cuéntanos Tu Secreto...."
+        h1Classes="text-6xl md:text-6xl lg:text-8xl xl:text-8x1 font-bold text-gray-200"
+        h2Text="La Cripta de las Confesiones, lleva tu secreto hastalatumba "
+        h2Classes="tracking-tight text-3xl sm:text-3xl md:text-3xl lg:text-2xl xl:text-3x1 text-yellow-200 font-light"
+        sectionClasses="bg-[url('/Imagenes/fonDos/herohome.webp')] h-[900px] w-full bg-fixed bg-cover "
+        overlayClasses=" inset-0 bg-black opacity-60 h-[900px] w-full"
         containerClasses="absolute inset-0 flex flex-col justify-center md:ml-16 ml-5 md:w-[650px] w-[400px] "
-        encabezadoClasses="text-white"
-        h1Classes="text-5xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-8x1 text-yellow-400 font-bold"
-        h2Classes="tracking-tight text-2xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-8x1 text-slate-50"
-        h3Classes="text-xl text-white mt-4 md:w-[500px] w-[300px]"
+        fontAwesome="fas fa-lock"
+        spanClasses="border-md bg-red-900 inline-block w-[210px]  my-3 p-4 font-bold text-base sm:text-2xl md:text-3xl lg:text-base "
+        ctaText="Déjanos Tu Historia"
       />
+      <EstaDisticas />
 
-      <Servicios />
-      <Valores />
-      <SliderProyectos client:load />
-      <Faq />
-      <SliderTestimonios client:load />
-
-      <Cta
-        sectionClasses="px-2 py-10"
-        h2="Han Confiado en nosotros"
-        h2Classes="text-base font-semibold text-yellow-400 tracking-wide uppercase "
-        btnClasses="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-bold rounded-md text-black bg-yellow-400 hover:bg-green-900 hover:text-white focus:outline-none focus:shadow-outline"
-        txtBtn="Descarga Nuestro Brochure 2024"
-      />
-      <Contacto />
+      <SliderConfesiones client:load />
     </main>
   </Layout>
 

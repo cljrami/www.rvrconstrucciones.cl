@@ -1,6 +1,7 @@
 ---
 // Prop para el texto del preloader
-const text = Astro.props.text || "Cargando...";
+const text =
+  Astro.props.text || "Confiésate y lleva tu secreto HastalaTumba...";
 ---
 
 <script>
@@ -13,18 +14,19 @@ const text = Astro.props.text || "Cargando...";
 
 <div
   id="preloader"
-  class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 z-50"
+  class="fixed top-0 left-0 w-full flex justify-center items-center bg-black z-50 w-100 h-screen"
 >
-  <div class="p-8 flex flex-col items-center">
-    <div
-      class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600"
-    >
-    </div>
-    <p
-      id="fade-text"
-      class="text-white text-lg animate-fade animate-infinite mt-10"
-    >
-      {text}
-    </p>
+  <div
+    class="bg-[url('/Imagenes/preLoader/smoke_layer_2.webp')] bg-cover absolute h-screen flex w-full animate-fade"
+  >
   </div>
+  <div
+    class="bg-[url('/Imagenes/preLoader/smoke-bg.webp')] -z-10 bg-cover absolute h-screen flex w-full animate-fade"
+  >
+  </div>
+  <h1
+    class="text-white font-black tracking-tight text-5xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%]"
+  >
+    {text}
+  </h1>
 </div>

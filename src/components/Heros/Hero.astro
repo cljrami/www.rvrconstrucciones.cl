@@ -1,71 +1,86 @@
 ---
 export interface Props {
-  encabezado: string;
-  h1: string;
-  h2: string;
-  h3: string;
-  p: string;
-  backgroundImage: string;
-  encabezadoClasses: string;
-  backgroundImageClasses: string;
-  sectionClasses?: string;
-  overlayClasses?: string;
-  containerClasses?: string;
-  subtitleClasses?: string;
-  h1Classes?: string;
-  h2Classes?: string;
-  h3Classes?: string;
+  sectionClasses: string;
 
-  pClasses?: string;
+  overlayClasses: string;
+  containerClasses: string;
+  h1Text: string;
+  h1Classes: string;
+  h2Text: string;
+  h2Classes: string;
+  fontAwesome: string;
+  spanClasses: string;
+  ctaText: string;
 }
 
 const {
-  sectionClasses,
-  backgroundImage,
-  backgroundImageClasses,
   overlayClasses = "",
-  encabezado,
-  encabezadoClasses = "",
-  h1,
+  h1Text = "",
   h1Classes = "",
-  h2,
+  h2Text = "",
   h2Classes = "",
-  h3,
-  h3Classes = "",
-  p,
-  pClasses = "",
-
   containerClasses = "",
+  sectionClasses = ",",
 } = Astro.props;
+
+import CtaHero from "../Cta/ctaHero.astro";
 ---
 
-<section class={`${sectionClasses}`} id="hero">
-  <img
-    src={backgroundImage}
-    alt="Mantenciones de Techumbres"
-    class={`${backgroundImageClasses}`}
-  />
-  <div class={` ${overlayClasses}`}></div>
+<section id="hero" class={sectionClasses}>
+  <div class={overlayClasses}></div>
 
-  <div
-    class={`${containerClasses}`}
-    data-aos="zoom-in-right"
-    data-aos-delay="10"
-    data-aos-mirror="true"
-    data-aos-once="false"
-  >
-    <div class={`${encabezadoClasses}`}>
-      {encabezado}
-    </div>
-
-    <h1 class={` ${h1Classes}`}>
-      {h1}
+  <div class={containerClasses}>
+    <h1 class={h1Classes}>
+      {h1Text}
     </h1>
-    <h2 class={` ${h2Classes}`}>
-      {h2}
+    <h2 class={h2Classes}>
+      {h2Text}
     </h2>
-    <h3 class={` ${h3Classes}`}>
-      {h3}
-    </h3>
+    <CtaHero
+      textoBtn="Déjanos tu historia"
+      classesBtn=" bg-red-900 rounded-md p-4 gap-2 text-xl w-[240px] mt-5 "
+      fontAwesome="fas fa-lock"
+    />
   </div>
+
+  <ul
+    class="hidden lg:flex lg:gap-5 lg:rotate-90 lg:absolute lg:top-[340px] lg:-right-[100px]"
+  >
+    <li>
+      <a
+        href="https://www.instagram.com/hastalatumba.cl/"
+        class=""
+        title="Síguenos en Instagram "
+      >
+        <i class="fab fa-instagram" aria-hidden="true"></i> Imstragram</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.facebook.com/hastalatumba.cl"
+        class=""
+        title="Sigue nuestra página en Facebook "
+      >
+        <i class="fab fa-facebook" aria-hidden="true"></i> Facebook</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.youtube.com/@hastalatumba"
+        class=""
+        title="Baila con nosotros en TikTok"
+      >
+        <i class="fab fa-youtube" aria-hidden="true"></i> Youtube</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.tiktok.com/@hastalatumba.cl"
+        class=""
+        title="Sígue nuestro canal en Youtube "
+      >
+        <i class="fab fa-tiktok" aria-hidden="true"></i> Tik Tok</a
+      >
+    </li>
+  </ul>
 </section>

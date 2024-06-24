@@ -2,17 +2,17 @@
 import "../../src/styles/global.css";
 import NavBar from "../components/Navbar/NavBar.astro";
 const navLinks = [
-  { href: "https://www.rvrconstrucciones.cl", label: "Inicio" },
+  { href: "", label: "Inicio" },
   {
-    href: "https://www.rvrconstrucciones.cl/nuestra-empresa",
+    href: "",
     label: "Nosotros",
   },
   {
-    href: "https://www.rvrconstrucciones.cl/#faq",
+    href: "",
     label: "Preguntas Frecuentes",
   },
-  { href: "https://www.rvrconstrucciones.cl/#servicios", label: "Servicios" },
-  { href: "https://www.rvrconstrucciones.cl/#contacto", label: "Contáctanos" },
+  { href: "", label: "Servicios" },
+  { href: "", label: "Contáctanos" },
 ];
 
 import Footer from "../components/Footer.astro";
@@ -36,11 +36,7 @@ import Favicon from "../components/Favicon.astro";
     <slot />
     <header>
       <nav>
-        <NavBar
-          logoSrc="/Imagenes/Logos/logo.webp"
-          logoAlt="Logo de Mi Sitio"
-          links={navLinks}
-        />
+        <NavBar textoLogo="hastalatumba" links={navLinks} />
       </nav>
     </header>
 

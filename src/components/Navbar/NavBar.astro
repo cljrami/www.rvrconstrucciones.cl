@@ -5,12 +5,12 @@ export interface NavLink {
 }
 
 export interface Props {
-  logoSrc: string;
-  logoAlt: string;
+  textoLogo: string;
+
   links: NavLink[];
 }
 
-const { logoSrc, logoAlt, links } = Astro.props;
+const { textoLogo, links } = Astro.props;
 ---
 
 <style>
@@ -25,16 +25,11 @@ const { logoSrc, logoAlt, links } = Astro.props;
 
 <div
   id="navbar"
-  class="z-10 fixed top-0 left-0 w-full font-semibold text-black transition-nav"
+  class="z-100 w-full fixed transition-nav h-[80px] flex flex-col top-0"
 >
-  <nav class="flex justify-between items-center p-4">
+  <nav class="flex p-4 w-100 justify-between">
     <a href="/" class="text-xl font-bold">
-      <img
-        src={logoSrc}
-        alt={logoAlt}
-        class="max-w-[50px] h-auto"
-        loading="lazy"
-      />
+      {textoLogo}
     </a>
     <button id="menu-btn" class="md:hidden">
       <svg
@@ -71,7 +66,7 @@ const { logoSrc, logoAlt, links } = Astro.props;
   id="sidebar"
   class="fixed inset-0 bg-slate-900 bg-opacity-10 backdrop-blur-lg hidden z-50"
 >
-  <div class="relative min-h-full w-80 bg-white text-gray-800">
+  <div class="relative min-h-full w-80 bg-black text-white">
     <button id="close-btn" class="absolute top-0 right-0 p-4">
       <svg
         class="h-6 w-6"
@@ -86,7 +81,8 @@ const { logoSrc, logoAlt, links } = Astro.props;
           d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-    <ul class="flex flex-col items-start p-4">
+    <h2 class="pt-20 pl-2 font-bold">HastalaTumba</h2>
+    <ul class="flex flex-col items-start pt-4">
       {
         links.map((link) => (
           <li class="p-2 text-lg">
@@ -97,6 +93,16 @@ const { logoSrc, logoAlt, links } = Astro.props;
         ))
       }
     </ul>
+
+    <button
+      id="btn"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight"
+      class="d-none d-xl-block"
+      ><span></span><span></span><span></span>
+    </button>
   </div>
 </div>
 
@@ -141,13 +147,13 @@ const { logoSrc, logoAlt, links } = Astro.props;
         lastScrollY = window.scrollY;
 
         if (window.scrollY > 100) {
-          navbar.style.backgroundColor = "rgba(32, 38, 49, 0.9)";
+          navbar.style.backgroundColor = "bg-black";
           navbar.style.backdropFilter = "blur(10px)";
           navbar.classList.remove("text-black");
           navbar.classList.add("text-white");
         } else {
-          navbar.style.backgroundColor = "rgba(32, 38, 49, 0.2)";
-          navbar.style.backdropFilter = "none";
+          navbar.style.backgroundColor = "bg-black";
+          navbar.style.backdropFilter = "blur(10px)";
           navbar.classList.remove("text-white");
           navbar.classList.add("text-black");
         }
