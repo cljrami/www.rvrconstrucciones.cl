@@ -30,7 +30,8 @@
   const modalBg = document.getElementById("videoModal");
 
   if (openModalBtn) {
-    openModalBtn.addEventListener("click", () => {
+    openModalBtn.addEventListener("click", (event) => {
+      event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
       if (modalBg) {
         modalBg.classList.remove("hidden");
       }
