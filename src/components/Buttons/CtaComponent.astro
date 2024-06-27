@@ -1,8 +1,14 @@
 ---
-const { text, iconClass, additionalClasses = "" } = Astro.props;
+export interface Props {
+  buttonClasses: string;
+  textoBtn?: string;
+  fontAwesome?: string;
+}
+
+const { textoBtn = "", fontAwesome = "", buttonClasses = "" } = Astro.props;
 ---
 
-<button class={`  ${additionalClasses}`}>
-  <i class={`fa ${iconClass}`}></i>
-  <span>{text}</span>
+<button class={buttonClasses}>
+  <i class={fontAwesome}></i>
+  <span class="text-base">{textoBtn}</span>
 </button>

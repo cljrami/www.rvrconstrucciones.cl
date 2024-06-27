@@ -1,0 +1,37 @@
+---
+import Breadcrumb from "../breadcrumb.astro";
+export interface Props {
+  sectionClasses?: string;
+  overlayClasses?: string;
+  h1Text?: string;
+  h1Classes?: string;
+  h2Text?: string;
+  h2Classes?: string;
+  fontAwesome?: string;
+  spanClasses?: string;
+  ctaText?: string;
+}
+
+const {
+  sectionClasses = "",
+  overlayClasses = "",
+  h1Text = "",
+  h1Classes = "",
+} = Astro.props;
+---
+
+<section id="heroHistorias" class={sectionClasses}>
+  <div class={overlayClasses}></div>
+
+  <h1 class={h1Classes}>
+    {h1Text}
+  </h1>
+  <Breadcrumb
+    sectionClasses="relative"
+    linkInicio="/"
+    iconClass=""
+    linkSeccion=""
+    seccion="Historias"
+    nombreHistoria="La Colegiala"
+  />
+</section>

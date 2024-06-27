@@ -1,53 +1,30 @@
 ---
-import Preguntas from "../components/Preguntas.astro";
+import AccordionFaq from "./accordionns/accordionFaq.astro";
 ---
 
-<section class="px-2 py-10" id="faq">
-  <div class="relative overflow-hidden rounded-3xl">
-    <div class="relative w-full md:max-w-4xl mx-auto">
-      <div class="mb-10">
-        <span
-          class="inline-block mb-5 text-md text-yellow-400 font-bold uppercase tracking-widest"
-          >¿Tienes alguna pregunta?</span
-        >
-        <h2
-          class="font-heading text-4xl text-mygray lg:text-5xl font-bold font-heading"
-        >
-          Preguntas Frecuentes
-        </h2>
-      </div>
-      <div class="flex flex-wrap">
-        <div class="w-full">
-          <p>
-            <Preguntas
-              pregunta="¿Por qué elegirnos?"
-              respuesta="<p>Nos aseguramos de cumplir las expectativas y necesidades en cada obra.</p><p>Empleamos siempre materiales de calidad, un servicio de primera y otorgamos garantía a cada uno de nuestros trabajos.</p><p><Nuestros colaboradores comparten valores de probidad, integridad, puntualidad y trabajo en equipo</p>"
-            />
-          </p>
-
-          <Preguntas
-            pregunta="¿Realizan trabajos a persona naturales?"
-            respuesta="En estos momentos estamos desplegados en distintas obras de empresas mandantes, pero cuéntanos en que te podemos ayudar"
-          />
-          <Preguntas
-            pregunta="¿RVR es una empresa que le de oportunidades a alumnos en practica?"
-            respuesta="En estos momentos no estamos con ningún proyecto que requiera de alumnos en práctica, pero deben estar atentos /as , dado que publicaremos por esta vía en caso de requerir"
-          />
-
-          <Preguntas
-            pregunta="¿Cómo puedo solicitar los servicios de RVR Ingeniería y Construcciones SpA?"
-            respuesta="Dirígete a la sección Contáctanos, déjanos tus datos y tipo de requerimiento, para que nuestro equipo pueda evaluar y comunicarse con ustedes."
-          />
-          <Preguntas
-            pregunta="¿Tienen capacidad y cobertura para desarrollar algún proyecto en Minería?"
-            respuesta="Efectivamente nuestros líderes de equipos, tienen una basta experiencia en Minería, no tenemos inconveniente en ser parte de proyectos mineros tanto en Chile como en el extranjero."
-          />
-          <Preguntas
-            pregunta="¿En que regiónes realizan servicios?"
-            respuesta="Actualmente desarrollamos proyectos entre la región de Ñuble hasta la Araucanía, pero estamos abiertos a evaluar tu proyecto, dirígete a la sección Contáctanos y déjanos tus inquietudes"
-          />
-        </div>
-      </div>
-    </div>
+<section class="p-4 py-24 max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
+  <div class="flex flex-col text-left basis-1/2">
+    <h3 class="inline-block font-semibold text-primary mb-4">FAQ</h3>
+    <h3 class="text-4xl md:text-6xl lg:text-9x1 font-bold text-base-content">
+      Preguntas y Respuestas
+    </h3>
   </div>
+  <ul class="basis-1/2">
+    <AccordionFaq
+      pregunta="¿Cómo puedo compartir mi historia?"
+      respuesta="Envía tu historia a historias@hastalatumba.cl"
+    />
+    <AccordionFaq
+      pregunta="¿De que se trata hlt?"
+      respuesta="Este sitio web es una plataforma diseñada para permitir que las personas compartan sus experiencias, pensamientos o sentimientos de forma totalmente anónima y confidencial."
+    />
+    <AccordionFaq
+      pregunta="¿Cómo funciona la anonimidad en este sitio?"
+      respuesta="Garantizamos el anonimato absoluto al no requerir ningún tipo de información personal identificable. No es necesario proporcionar nombre, correo electrónico ni ningún otro dato personal."
+    />
+    <AccordionFaq
+      pregunta="¿Qué tipo de cosas puedo compartir en este sitio?"
+      respuesta="Puedes compartir cualquier cosa que desees, como historias personales, desafíos que enfrentas, reflexiones, o simplemente expresar tus pensamientos sin preocuparte por revelar tu identidad."
+    />
+  </ul>
 </section>

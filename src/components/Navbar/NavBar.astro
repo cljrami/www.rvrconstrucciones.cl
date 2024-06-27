@@ -28,7 +28,10 @@ const { textoLogo, links } = Astro.props;
   class="z-100 w-full fixed transition-nav h-[80px] flex flex-col top-0"
 >
   <nav class="flex p-4 w-100 justify-between">
-    <a href="/" class="text-xl font-bold">
+    <a
+      href="/"
+      class="text-xl font-light text-white flex justify-center items-center"
+    >
       {textoLogo}
     </a>
     <button id="menu-btn" class="md:hidden">
@@ -45,14 +48,11 @@ const { textoLogo, links } = Astro.props;
           d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
-    <ul id="menu" class="hidden md:flex md:flex-row items-center space-x-4">
+    <ul id="menu" class="hidden md:flex">
       {
         links.map((link) => (
           <li class="p-2">
-            <a
-              href={link.href}
-              class="flex items-center text-white hover:text-yellow-400"
-            >
+            <a href={link.href} class="flex  text-white hover:text-yellow-400">
               {link.label}
             </a>
           </li>

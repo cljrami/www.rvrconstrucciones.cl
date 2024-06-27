@@ -1,0 +1,55 @@
+<a
+  href="#"
+  id="openModal"
+  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  >Abrir Modal</a
+>
+
+<div
+  class="fixed top-0 left-0 w-full h-full bg-opacity-50 flex justify-center items-center z-50 hidden bg-black backdrop-filter backdrop-blur"
+  id="videoModal"
+>
+  <div class="p-8 w-full max-w-lg relative">
+    <span
+      id="closeModal"
+      class="absolute top-0 right-0 mt-4 mr-4 cursor-pointer text-xl p-5 text-white"
+      >&times;</span
+    >
+    <div class="aspect-w-16 aspect-h-9 mb-6">
+      <video class="w-full h-full rounded-lg" controls autoplay>
+        <source src="tu_video.mp4" type="video/mp4" />
+        Tu navegador no soporta la reproducción de videos.
+      </video>
+    </div>
+  </div>
+</div>
+
+<script>
+  const openModalBtn = document.getElementById("openModal");
+  const closeModalBtn = document.getElementById("closeModal");
+  const modalBg = document.getElementById("videoModal");
+
+  if (openModalBtn) {
+    openModalBtn.addEventListener("click", () => {
+      if (modalBg) {
+        modalBg.classList.remove("hidden");
+      }
+    });
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+      if (modalBg) {
+        modalBg.classList.add("hidden");
+      }
+    });
+  }
+
+  if (modalBg) {
+    window.addEventListener("click", (event) => {
+      if (event.target === modalBg) {
+        modalBg.classList.add("hidden");
+      }
+    });
+  }
+</script>

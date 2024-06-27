@@ -21,19 +21,30 @@ export default {
 	},
 	plugins: [
 	  require('tailwindcss-animated'),
+	  function ({ addUtilities }) {
+		addUtilities({
+		  '.text-stroke': {
+			'-webkit-text-stroke': '2px #fff',
+		  },
+		})
+		
+		;
+	  },
 	  
 	],
-	vars: {
-		dark: {
-		  background: '#222',
-		  text: '#fff',
-		  gray100: '#aaa',
-		  link: '#fff',
-		  hoverBg: '#333',
-		},
-		light: {
-		  // ... Colores para el modo claro
-		},
-	  },
+	
+	// vars: {
+	// 	dark: {
+	// 	  background: '#222',
+	// 	  text: '#fff',
+	// 	  gray100: '#aaa',
+	// 	  link: '#fff',
+	// 	  hoverBg: '#333',
+	// 	},
+	// 	light: {
+	// 	  // ... Colores para el modo claro
+	// 	},
+	//   },
   }
   
+

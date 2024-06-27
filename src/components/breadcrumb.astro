@@ -1,30 +1,48 @@
 ---
+export interface Props {
+  sectionClasses?: string;
+  linkInicio?: string;
+  iconClass?: string;
+  linkSeccion?: string;
+  seccion?: string;
+  nombreHistoria?: string;
+}
+
 const {
-  link_home,
-  seccion_actual,
-  link_seccion_actual,
-  iconClass,
-  additionalClasses = "",
+  sectionClasses = "",
+  linkInicio = "",
+  iconClass = "",
+  linkSeccion = "",
+  seccion = "",
+  nombreHistoria = "",
 } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumb" role="navigation" class={`  ${additionalClasses}`}>
-  <ul class="flex flex-wrap items-center my-1 pt-20">
+<section
+  id="Breadcrumb"
+  aria-label="Breadcrumb"
+  role="navigation"
+  class={sectionClasses}
+>
+  <ul class="flex flex-wrap items-center mt-2">
     <li class="inline-flex items-center">
       <a
-        href={link_home}
+        href={linkInicio}
         aria-label="home"
         class="inline-flex items-center font-medium text-white"
       >
         <i class={`fa ${iconClass} `}></i>
+        <span class="px-1 text-gray-400">Purgatorio ></span>
       </a>
     </li>
-
     <li class="flex items-center">
-      <span class="px-1 text-lg text-white">></span>
-      <a href={link_seccion_actual} class="font-medium text-white underline">
-        {seccion_actual}
+      <a href={linkSeccion} class="font-medium text-gray-400 hover:underline">
+        {seccion}
       </a>
+    </li>
+    <li class="flex items-center">
+      <span class="px-1 text-lg text-white underline"></span> >
+      {nombreHistoria}
     </li>
   </ul>
-</nav>
+</section>

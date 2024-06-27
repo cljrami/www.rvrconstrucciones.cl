@@ -1,7 +1,10 @@
 ---
-// Prop para el texto del preloader
-const text =
-  Astro.props.text || "Confiésate y lleva tu secreto HastalaTumba...";
+export interface Props {
+  preloaderText?: string;
+  classesRespuesta?: string;
+}
+
+const { preloaderText = "" } = Astro.props;
 ---
 
 <script>
@@ -25,8 +28,8 @@ const text =
   >
   </div>
   <h1
-    class="text-white font-black tracking-tight text-5xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%]"
+    class="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
   >
-    {text}
+    {preloaderText}
   </h1>
 </div>
