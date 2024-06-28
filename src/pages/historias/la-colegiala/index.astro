@@ -1,9 +1,10 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
-import PreLoader from "../../components/PreLoader.astro";
+import PreLoader from "../../../components/PreLoader.astro";
 
-import HeroHistorias from "../../components/Heros/HeroHistorias.astro";
+import HeroHistorias from "../../../components/Heros/HeroHistorias.astro";
+import Historia from "./historia.astro";
 ---
 
 <!doctype html>
@@ -15,7 +16,7 @@ import HeroHistorias from "../../components/Heros/HeroHistorias.astro";
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
-      title="La cripta de las confesiones"
+      title="La Colegiala"
       description="Libérate y cuenta tu secreto que ha nadie le contarías"
       canonical="https://www.hastalatumba.cl/"
       openGraph={{
@@ -66,6 +67,7 @@ import HeroHistorias from "../../components/Heros/HeroHistorias.astro";
         h1Classes="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
       />
     </main>
+    <Historia />
   </Layout>
 
 
