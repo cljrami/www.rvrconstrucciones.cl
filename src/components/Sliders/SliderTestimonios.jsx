@@ -11,7 +11,10 @@ import { Keyboard, Navigation } from "swiper/modules";
 
 const SliderTestimonios = () => {
   return (
-    <section className="overflow-hidden animate-fade animate-ease-in-out  mt-10 p-2  md:max-w-6xl mx-auto">
+    <section
+      className="overflow-hidden animate-fade animate-ease-in-out  mt-10 p-2  md:max-w-6xl mx-auto"
+      id="SliderTestimonios"
+    >
       <h1 className="text-center text-4xl lg:text-5xl font-bold font-heading mb-6 max-w-md mx-auto">
         Opiniónes de nuestros clientes
       </h1>

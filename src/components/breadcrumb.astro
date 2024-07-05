@@ -24,23 +24,23 @@ const {
   role="navigation"
   class={sectionClasses}
 >
-  <ul class="flex flex-wrap items-center mt-2">
-    <li class="inline-flex items-center">
+  <ul class="flex flex-wrap mt-2 uppercase">
+    <li class="inline-flex">
       <a
         href={linkInicio}
         aria-label="home"
-        class="inline-flex items-center font-medium text-white"
+        class="inline-flex font-medium text-white"
       >
         <i class={`fa ${iconClass} `}></i>
         <span class="px-1 text-gray-400">Purgatorio ></span>
       </a>
     </li>
-    <li class="flex items-center">
+    <li class="flex">
       <a href={linkSeccion} class="font-medium text-gray-400 hover:underline">
         {seccion}
       </a>
     </li>
-    <li class="flex items-center">
+    <li class="flex">
       <h3 class="px-1 text-lg text-white underline-offset-8"></h3> >
       {nombreHistoria}
     </li>

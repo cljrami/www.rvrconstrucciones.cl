@@ -2,25 +2,26 @@
 import Layout from "../../../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
 import PreLoader from "../../../components/PreLoader.astro";
-
+// import Breadcrumb from "../../../components/breadcrumb.astro";
 import HeroHistorias from "../../../components/Heros/HeroHistorias.astro";
 import Historia from "./historia.astro";
+import Warning from "../../../components/Popups/adverticiaMayoriaedad.astro";
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
       title="La Colegiala"
       description="Libérate y cuenta tu secreto que ha nadie le contarías"
-      canonical="https://www.hastalatumba.cl/"
+      canonical="https://www.hastalatumba.cl/historias/la-colegiala"
       openGraph={{
-        url: "https://www.hastalatumba.cl/",
+        url: "https://www.hastalatumba.cl/historias/la-colegiala",
         type: "website",
         title: "La cripta de las confesiones",
         description: "Libérate y cuenta tu secreto que ha nadie le contarías",
@@ -59,12 +60,19 @@ import Historia from "./historia.astro";
 
   <Layout title="">
     <main>
+      <Warning />
       <PreLoader preloaderText="La Colegiala" />
+
       <HeroHistorias
-        sectionClasses="bg-[url('/Imagenes/portadas/heroMujer.webp')] h-[400px] w-full bg-fixed bg-cover flex justify-center items-center flex-col"
-        overlayClasses=" absolute inset-0 bg-black opacity-70 h-[400px]"
+        sectionClasses="bg-[url('/Imagenes/portadas/heroMujer.webp')] h-screen bg-cover flex justify-center items-center flex-col "
+        overlayClasses=" absolute inset-0 bg-black opacity-80 h-screen"
         h1Text="La Colegiala...."
         h1Classes="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
+        HomeLink="/"
+        NombreHomeLink="Purgatorio"
+        linkSeccion="/historias"
+        seccion="Historias"
+        tituloSeccion="La Colegiala"
       />
     </main>
     <Historia />

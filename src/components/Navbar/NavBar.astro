@@ -21,6 +21,16 @@ const { textoLogo, links } = Astro.props;
   .hidden-nav {
     transform: translateY(-100%);
   }
+  .active-link:before {
+    vertical-align: middle;
+    margin-right: 2px;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f105";
+  }
+  .active-link {
+    @apply shadow-lg shadow-gray-900 bg-transparent text-yellow-400;
+  }
 </style>
 
 <div
@@ -105,38 +115,66 @@ const { textoLogo, links } = Astro.props;
     </button>
   </div>
 </div>
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.getElementById("navbar");
     const menuBtn = document.getElementById("menu-btn");
     const sidebar = document.getElementById("sidebar");
     const closeBtn = document.getElementById("close-btn");
+    const navLinks = navbar ? navbar.querySelectorAll("nav ul li a") : [];
     const sidebarLinks = sidebar ? sidebar.querySelectorAll("a") : [];
     let lastScrollY = window.scrollY;
 
+    // Function to highlight the active link
+    function setActiveLink(clickedLink: HTMLAnchorElement) {
+      navLinks.forEach((link) => link.classList.remove("active-link"));
+      clickedLink.classList.add("active-link");
+    }
+
+    // Highlight the active link based on the current URL
+    function highlightCurrentLink() {
+      const currentUrl = window.location.pathname;
+      navLinks.forEach((link) => {
+        if (link.getAttribute("href") === currentUrl) {
+          link.classList.add("active-link");
+        } else {
+          link.classList.remove("active-link");
+        }
+      });
+    }
+
+    // Add click event to nav links
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function (this: HTMLAnchorElement) {
+        setActiveLink(this);
+      });
+    });
+
+    // Add click event to sidebar links
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", function (this: HTMLAnchorElement) {
+        setActiveLink(this);
+        if (sidebar) {
+          sidebar.classList.add("hidden");
+        }
+      });
+    });
+
+    // Handle menu button click for showing/hiding sidebar
     if (menuBtn && sidebar) {
       menuBtn.addEventListener("click", () => {
         sidebar.classList.toggle("hidden");
       });
     }
 
+    // Handle close button click for hiding sidebar
     if (closeBtn && sidebar) {
       closeBtn.addEventListener("click", () => {
         sidebar.classList.add("hidden");
       });
     }
 
-    if (sidebarLinks) {
-      sidebarLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          if (sidebar) {
-            sidebar.classList.add("hidden");
-          }
-        });
-      });
-    }
-
+    // Handle scroll event for hiding/showing navbar and changing its styles
     if (navbar) {
       window.addEventListener("scroll", () => {
         if (window.scrollY > lastScrollY) {
@@ -147,17 +185,24 @@ const { textoLogo, links } = Astro.props;
         lastScrollY = window.scrollY;
 
         if (window.scrollY > 100) {
-          navbar.style.backgroundColor = "bg-black";
-          navbar.style.backdropFilter = "blur(10px)";
+          navbar.classList.add(
+            "bg-transparent",
+            "backdrop-blur-lg",
+            "text-white"
+          );
           navbar.classList.remove("text-black");
-          navbar.classList.add("text-white");
         } else {
-          navbar.style.backgroundColor = "bg-black";
-          navbar.style.backdropFilter = "blur(10px)";
-          navbar.classList.remove("text-white");
+          navbar.classList.remove(
+            "bg-transparent",
+            "backdrop-blur-lg",
+            "text-white"
+          );
           navbar.classList.add("text-black");
         }
       });
     }
+
+    // Initial call to highlight the current link based on URL
+    highlightCurrentLink();
   });
 </script>

@@ -1,0 +1,38 @@
+<div
+  id="agePopup"
+  class="agePopup fixed inset-0 flex items-center justify-center bg-black z-50 backdrop-filter backdrop-blur bg-opacity-20"
+>
+  <div class="bg-white text-gray-900 p-8 rounded-lg shadow-lg m-10">
+    <h2 class="text-2xl font-bold mb-4">¿Eres Mayor de 18 Años?</h2>
+    <p class="mb-4">Es Necesario Para Continuar</p>
+    <button
+      id="confirmAgeButton"
+      class="bg-red-500 text-white px-4 py-2 rounded">Si</button
+    >
+    <button id="exitButton" class="bg-green-500 text-white px-4 py-2 rounded"
+      >Salir Del Sitio</button
+    >
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const agePopup = document.getElementById("agePopup");
+    const confirmAgeButton = document.getElementById("confirmAgeButton");
+    const exitButton = document.getElementById("exitButton");
+
+    // Check if the elements exist before adding event listeners
+    if (agePopup && confirmAgeButton && exitButton) {
+      agePopup.classList.remove("hidden");
+
+      confirmAgeButton.addEventListener("click", function () {
+        agePopup.classList.add("hidden");
+      });
+
+      exitButton.addEventListener("click", function () {
+        window.location.href = "https://www.google.com";
+      });
+    } else {
+      console.error("One or more elements are not found in the DOM.");
+    }
+  });
+</script>

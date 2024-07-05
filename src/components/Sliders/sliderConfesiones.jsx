@@ -14,7 +14,7 @@ import TarjetaConfesiones from "../Tarjetas/tarjetaConfesiones";
 
 const sliderConfesiones = () => {
   return (
-    <section id="Confesiones" className="mt-0  py-10 text-center">
+    <section id="SliderHistorias" className="mt-0  py-10 text-center">
       <div
         className="overflow-hidden "
         data-aos="fade-up"
@@ -36,7 +36,7 @@ const sliderConfesiones = () => {
               // effect={"coverflow"}
               grabCursor={true}
               //centeredSlides={true}
-              slidesPerView={"auto"}
+              //slidesPerView={"auto"}
               // coverflowEffect={{
               //   rotate: 0,
               //   stretch: -110,
@@ -50,7 +50,7 @@ const sliderConfesiones = () => {
               // effect={"coverflow"}
               //grabCursor="true"
               //centeredSlides="true"
-              //slidesPerView="auto"
+              // slidesPerView="auto"
               //slideToClickedSlide="true"
               //loop="true"
               //coverflowEffect={{
@@ -96,107 +96,35 @@ const sliderConfesiones = () => {
                   autor="Anonima"
                   edad="21"
                   url="/historias/la-colegiala"
+                  alt="LA Historia De La Colegiala"
                 />
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="/Imagenes/portadas/historiaMujer.webp"
-                  className="opacity-30"
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="Don Cagazo"
+                  autor="Anonima"
+                  edad="21"
+                  url="/historias/don-cagazo"
                 />
-
-                <div className="absolute z-100  bottom-0 px-2 w-full py-5 text-left">
-                  <a href="">
-                    <h2
-                      className="tracking-tight text-3xl sm:text-6xl md:text-3xl lg:text-3xl xl:text-5x1 font-semibold 
-     "
-                    >
-                      Cita indiscreta
-                    </h2>
-                  </a>
-                  <h3 className="">
-                    Anónimo <i className="fas fa-mars"></i> | 25 años
-                  </h3>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="/Imagenes/portadas/historiaMujer.webp"
-                  className="opacity-30"
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="El Desleal"
+                  autor="Anonimo"
+                  edad="41"
+                  url="/historias/el-desleal"
                 />
-
-                <div className="absolute z-100  bottom-0 px-2 w-full py-5 text-left">
-                  <a href="">
-                    <h2
-                      className="tracking-tight text-3xl sm:text-6xl md:text-3xl lg:text-3xl xl:text-5x1 font-semibold 
-     "
-                    >
-                      Cita indiscreta
-                    </h2>
-                  </a>
-                  <h3 className="">
-                    Anónimo <i className="fas fa-mars"></i> | 25 años
-                  </h3>
-                </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="/Imagenes/portadas/historiaMujer.webp"
-                  className="opacity-30"
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo=" El Fugitivo"
+                  autor="Anonimo"
+                  edad="41"
+                  url="/historias/el-fugitivo"
                 />
-
-                <div className="absolute z-100  bottom-0 px-2 w-full py-5 text-left">
-                  <a href="">
-                    <h2
-                      className="tracking-tight text-3xl sm:text-6xl md:text-3xl lg:text-3xl xl:text-5x1 font-semibold 
-     "
-                    >
-                      Cita indiscreta
-                    </h2>
-                  </a>
-                  <h3 className="">
-                    Anónimo <i className="fas fa-mars"></i> | 25 años
-                  </h3>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="/Imagenes/portadas/historiaMujer.webp"
-                  className="opacity-30"
-                />
-
-                <div className="absolute z-100  bottom-0 px-2 w-full py-5 text-left">
-                  <a href="">
-                    <h2
-                      className="tracking-tight text-3xl sm:text-6xl md:text-3xl lg:text-3xl xl:text-5x1 font-semibold 
-     "
-                    >
-                      Cita indiscreta
-                    </h2>
-                  </a>
-                  <h3 className="">
-                    Anónimo <i className="fas fa-mars"></i> | 25 años
-                  </h3>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="/Imagenes/portadas/historiaMujer.webp"
-                  className="opacity-30"
-                />
-
-                <div className="absolute z-100  bottom-0 px-2 w-full py-5 text-left">
-                  <a href="">
-                    <h2
-                      className="tracking-tight text-3xl sm:text-6xl md:text-3xl lg:text-3xl xl:text-5x1 font-semibold 
-     "
-                    >
-                      Cita indiscreta
-                    </h2>
-                  </a>
-                  <h3 className="">
-                    Anónimo <i className="fas fa-mars"></i> | 25 años
-                  </h3>
-                </div>
               </SwiperSlide>
             </Swiper>
           </div>

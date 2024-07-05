@@ -1,5 +1,4 @@
 ---
-import Breadcrumb from "../breadcrumb.astro";
 export interface Props {
   sectionClasses?: string;
   overlayClasses?: string;
@@ -7,9 +6,14 @@ export interface Props {
   h1Classes?: string;
   h2Text?: string;
   h2Classes?: string;
-  fontAwesome?: string;
+  // fontAwesome?: string;
   spanClasses?: string;
   ctaText?: string;
+  HomeLink?: string;
+  NombreHomeLink?: string;
+  linkSeccion?: string;
+  seccion?: string;
+  tituloSeccion?: string;
 }
 
 const {
@@ -17,6 +21,12 @@ const {
   overlayClasses = "",
   h1Text = "",
   h1Classes = "",
+  HomeLink = "/",
+  NombreHomeLink = "",
+  // fontAwesome = "",
+  linkSeccion = "",
+  seccion = "",
+  tituloSeccion = "",
 } = Astro.props;
 ---
 
@@ -26,12 +36,33 @@ const {
   <h1 class={h1Classes}>
     {h1Text}
   </h1>
-  <Breadcrumb
-    sectionClasses="relative"
-    linkInicio="/"
-    iconClass=""
-    linkSeccion="/historias"
-    seccion="Mausoleo de Historias"
-    nombreHistoria="La Colegiala"
-  />
+  <section
+    id="Breadcrumb"
+    aria-label="Breadcrumb"
+    role="navigation"
+    class="relative"
+  >
+    <ul class="flex flex-wrap mt-2 uppercase">
+      <li class="inline-flex">
+        <a
+          href={HomeLink}
+          aria-label="home"
+          class="inline-flex font-medium text-white"
+        >
+          <!-- <i class={`${fontAwesome} `}></i> -->
+          <span class="px-1 text-gray-400">{NombreHomeLink} </span>
+        </a>
+      </li>
+      <li class="flex">
+        <a href={linkSeccion} class="font-medium text-gray-400 hover:underline">
+          <i class="fas fa-angle-right"></i>
+          {seccion}
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </li>
+      <li class="flex">
+        <span class="px-1 text-white">{tituloSeccion} </span>
+      </li>
+    </ul>
+  </section>
 </section>

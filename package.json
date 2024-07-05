@@ -19,7 +19,7 @@
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "aos": "^2.3.4",
-    "astro": "^4.11.0",
+    "astro": "^4.11.5",
     "astro-devtoolbar-tailwind": "^0.0.8",
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-lighthouse": "^0.1.3",
