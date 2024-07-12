@@ -1,0 +1,84 @@
+---
+import LayoutHistorias from "../layouts/LayoutHistorias.astro";
+import { AstroSeo } from "@astrolib/seo";
+
+import PreLoader from "../components/PreLoader.astro";
+import HeroHistorias from "../components/Heros/HeroHistorias.astro";
+import FormHistoria from "../components/FormHistoria.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- -<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
+    <meta
+      name="keywords"
+      content="confesiones anónimas, compartir secretos, secretos anónimos, confesiones online, Hasta la Tumba"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <AstroSeo
+      title="Déjanos Tu Historia en HastalaTumba.cl - Comparte tus Secretos de Forma Segura"
+      description="Descubre y comparte confesiones anónimas de forma segura en HastalaTumba. Únete a nuestra comunidad global y encuentra apoyo y empatía"
+      canonical="https://www.hastalatumba.cl/"
+      openGraph={{
+        url: "https://www.hastalatumba.cl/",
+        type: "website",
+        title: "Confesiones Anónimas - Comparte tus Secretos de Forma Segura",
+        description:
+          "Confiesa tus secretos más profundos de forma anónima y segura. Lee confesiones de otros y comparte tus experiencias en nuestra plataforma.",
+        images: [
+          {
+            url: "https://www.hastalatumba.cl/OgImage.webp",
+            width: 1240,
+            height: 630,
+            alt: "Libérate y cuenta tu secreto que ha nadie le contarías",
+            type: "image/webp",
+          },
+        ],
+        site_name: "Hasta La Tumba",
+      }}
+      twitter={{
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+      }}
+    />
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "",
+            "item": "www.hastalatumba.cl"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <LayoutHistorias title="">
+    <PreLoader preloaderText="¡Confiésate!" />
+    <HeroHistorias
+      sectionClasses="bg-[url('/Imagenes/fonDos/herohome.webp')] h-screen w-full bg-cover flex justify-center items-center flex-col bg-fixed "
+      overlayClasses=" absolute inset-0 bg-black opacity-70 h-screen w-full "
+      h1Text="Déjanos Tu Historia"
+      h1Classes="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
+      HomeLink="/"
+      NombreHomeLink="Purgatorio"
+      tituloSeccion="Déjanos Tu Historia"
+      arrow="-"
+      Opcion1tml="<div class=' relative p-4 text-center'><button id='openFormBtn' class='px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700 animate-pulse'>Déjanos Tu Historia </button><a href=''><div class=p-4><a href=''><i class='fab fa-tiktok text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl'></i></a><a href=''><i class='fab fa-youtube text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl'></i></a><a href=''><i class='fab fa-facebook text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl'></i></a><a href=''><i class='fab fa-instagram text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl'></i></a></div>"
+    />
+
+    <FormHistoria />
+  </LayoutHistorias>
+
+
+</html>

@@ -1,40 +1,23 @@
 ---
-// FAS.astro
-export interface Props {
-  pregunta?: string;
-  respuesta?: string;
-  classesRespuesta?: string;
+interface Props {
+  pregunta: string;
+  respuesta: string;
 }
 
-const { pregunta = "", respuesta = "" } = Astro.props;
+const { pregunta, respuesta } = Astro.props;
 ---
 
-<li>
-  <details
-    class="group border-2 rounded-md border-separate border-t-gray-300 border-l-gray-300 border-r-gray-300"
-  >
-    <summary
-      class="flex cursor-pointer list-none items-center justify-between font-medium p-4"
-    >
-      <span class="text">{pregunta}</span>
-      <span class="transition group-open:rotate-180">
-        <svg
-          fill="none"
-          height="24"
-          shape-rendering="geometricPrecision"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-          width="24"
+<section id="Puf">
+  <div class="container flex flex-col justify-center">
+    <div class="">
+      <details class="w-full">
+        <summary class="focus:outline-none text-xl pb-2 cursor-pointer"
+          >{pregunta}</summary
         >
-          <path d="M6 9l6 6 6-6"></path>
-        </svg>
-      </span>
-    </summary>
-    <p class="animate-fadeIn text-white pl-4">
-      {respuesta}
-    </p>
-  </details>
-</li>
+        <p class="px-2 pb-2 text-gray-300 text-xl">
+          {respuesta}.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>

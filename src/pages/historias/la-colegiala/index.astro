@@ -13,7 +13,7 @@ import Warning from "../../../components/Popups/adverticiaMayoriaedad.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <!-- -<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
@@ -64,8 +64,8 @@ import Warning from "../../../components/Popups/adverticiaMayoriaedad.astro";
       <PreLoader preloaderText="La Colegiala" />
 
       <HeroHistorias
-        sectionClasses="bg-[url('/Imagenes/portadas/heroMujer.webp')] h-screen bg-cover flex justify-center items-center flex-col "
-        overlayClasses=" absolute inset-0 bg-black opacity-80 h-screen"
+        sectionClasses="bg-[url('/Imagenes/fonDos/heromujer.webp')] h-screen bg-cover flex justify-center items-center flex-col  bg-fixed  bg-fixed"
+        overlayClasses=" absolute inset-0 bg-black opacity-70 h-screen"
         h1Text="La Colegiala...."
         h1Classes="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
         HomeLink="/"
@@ -73,6 +73,8 @@ import Warning from "../../../components/Popups/adverticiaMayoriaedad.astro";
         linkSeccion="/historias"
         seccion="Historias"
         tituloSeccion="La Colegiala"
+        arrow2="-"
+        arrow="-"
       />
     </main>
     <Historia />

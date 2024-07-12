@@ -31,4 +31,5 @@ export default defineConfig({
       },
     },
   },
+  errorPage: '/src/pages/Error.astro',
 });

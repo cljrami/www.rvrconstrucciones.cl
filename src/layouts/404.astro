@@ -1,0 +1,25 @@
+---
+import "../../src/styles/global.css";
+
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import GoogleAnalitycs from "../components/GoogleAnalitycs.astro";
+import Favicon from "../components/Favicon.astro";
+---
+
+<html lang="es" class="scroll-smooth focus:scroll-auto">
+  <Favicon />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <!--GOGOLE FONTS -->
+  <!-- Establece una conexión temprana con el origen de Google Fonts -->
+  <GoogleAnalitycs />
+  <GoogleFontsOptimizer
+    url="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap async"
+  />
+
+  <body>
+    <slot />
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

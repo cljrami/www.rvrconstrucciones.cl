@@ -24,10 +24,10 @@ const sliderConfesiones = () => {
         data-aos-once="false"
       >
         <>
-          <h2 className="inline-block mb-1 text-lg text-gray-400 font-semi-bold tracking-widest capitalize">
+          <h2 className="inline-block mb-1 text-md text-gray-400  tracking-widest capitalize">
             Últimas Confesiónes
           </h2>
-          <h3 className="font-heading mb-1 tracking-tight text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8x1 font-bold">
+          <h3 className="font-heading mb-1 tracking-tight text-5xl ">
             Nuevas Historias
           </h3>
 
@@ -91,6 +91,26 @@ const sliderConfesiones = () => {
             >
               <SwiperSlide>
                 <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="El Bisagra"
+                  autor="Anonimo"
+                  edad="44"
+                  url="/historias/el-bisagra"
+                  alt="LA Historia De EL Bisagra"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="El Sapo De Nonita"
+                  autor="Anonimo"
+                  edad="20"
+                  url="/historias/el-sapo-de-nonita"
+                  alt="El Sapo De Nonita"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
                   image="/Imagenes/portadas/historiaMujer.webp"
                   titulo="La Colegiala"
                   autor="Anonima"
@@ -124,6 +144,78 @@ const sliderConfesiones = () => {
                   autor="Anonimo"
                   edad="41"
                   url="/historias/el-fugitivo"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaMujer.webp"
+                  titulo="Madura"
+                  autor="Anonimo"
+                  edad="41"
+                  url="/historias/la-madura"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="Flor De Hermano"
+                  autor="Anonimo"
+                  edad="41"
+                  url="/historias/flor-de-hermano"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="Flor Sin Pétalos"
+                  autor="Anonimo"
+                  edad="33"
+                  url="/historias/flor-sin-petalos"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="El Hijo Único"
+                  autor="Anonimo"
+                  edad="33"
+                  url="/historias/el-hijo-unico"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaMujer.webp"
+                  titulo="Juliana"
+                  autor="Anonimo"
+                  edad="33"
+                  url="/historias/juliana"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaMujer.webp"
+                  titulo="La Volteretas"
+                  autor="Anonimo"
+                  edad="33"
+                  url="/historias/la-volteretas"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="Proyecto De Popular"
+                  autor="Anonimo"
+                  edad="33"
+                  url="/historias/proyecto-de-popular"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <TarjetaConfesiones
+                  image="/Imagenes/portadas/historiaHombre.webp"
+                  titulo="Sangre En Cubierto"
+                  autor="Anonimo"
+                  edad="33"
+                  url="/historias/sangre-en-cubierto"
                 />
               </SwiperSlide>
             </Swiper>

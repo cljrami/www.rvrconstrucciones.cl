@@ -18,7 +18,7 @@ import Historias from "../../components/Historias.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <!-- -<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
     <meta
       name="keywords"
       content="confesiones anónimas, compartir secretos, secretos anónimos, confesiones online, Hasta la Tumba"
@@ -27,13 +27,13 @@ import Historias from "../../components/Historias.astro";
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
-      title="Confesiones Anónimas - Comparte tus Secretos de Forma Segura"
+      title="Mausoleo De Historias- Comparte tus Secretos de Forma Segura"
       description="Descubre y comparte confesiones anónimas de forma segura en HastalaTumba. Únete a nuestra comunidad global y encuentra apoyo y empatía"
       canonical="https://www.hastalatumba.cl/historias"
       openGraph={{
         url: "https://www.hastalatumba.cl/historias",
         type: "website",
-        title: "Confesiones Anónimas - Comparte tus Secretos de Forma Segura",
+        title: "Mausoleo De Historias- Comparte tus Secretos de Forma Segura",
         description:
           "Confiesa tus secretos más profundos de forma anónima y segura. Lee confesiones de otros y comparte tus experiencias en nuestra plataforma.",
         images: [
@@ -73,8 +73,8 @@ import Historias from "../../components/Historias.astro";
     <main>
       <PreLoader preloaderText="El Mausoleo De Historias" />
       <HeroHistorias
-        sectionClasses="bg-[url('/Imagenes/portadas/heroHombre.webp')] h-screen w-full bg-cover flex justify-center items-center flex-col "
-        overlayClasses=" absolute inset-0 bg-black opacity-70 h-screen w-full"
+        sectionClasses="bg-[url('/Imagenes/fonDos/herohome.webp')] h-screen w-full bg-cover flex justify-center items-center flex-col bg-fixed "
+        overlayClasses=" absolute inset-0 bg-black opacity-70 h-screen w-full "
         h1Text="Mausoleo De Historias"
         h1Classes="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
         HomeLink="/"
@@ -82,11 +82,12 @@ import Historias from "../../components/Historias.astro";
         linkSeccion="/historias"
         seccion="Historias"
         tituloSeccion="Mausoleo"
+        arrow="-"
+        arrow2="-"
       />
 
       <Historias />
 
-      <!-- <SliderConfesiones client:load /> -->
       <Marquee />
 
       <CtaPublicar

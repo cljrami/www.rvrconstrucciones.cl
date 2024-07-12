@@ -32,9 +32,7 @@ import CtaHero from "../Cta/ctaHero.astro";
     <h1 class={h1Classes}>
       {h1Text}
     </h1>
-    <h2 class={h2Classes}>
-      {h2Text}
-    </h2>
+    <h2 class={h2Classes} set:html={h2Text} />
     <CtaHero
       textoBtn="Déjanos tu historia"
       classesBtn=" bg-red-900 rounded-md p-4 gap-2 text-xl w-[240px] mt-5 "
@@ -48,7 +46,7 @@ import CtaHero from "../Cta/ctaHero.astro";
     <li>
       <a
         href="https://www.instagram.com/hastalatumba.cl/"
-        class=""
+        class="hover:text-yellow-400"
         title="Síguenos en Instagram "
         target="_blank"
       >
@@ -58,7 +56,7 @@ import CtaHero from "../Cta/ctaHero.astro";
     <li>
       <a
         href="https://www.facebook.com/hastalatumba.cl"
-        class=""
+        class="hover:text-yellow-400"
         title="Sigue nuestra página en Facebook "
         target="_blank"
       >
@@ -68,7 +66,7 @@ import CtaHero from "../Cta/ctaHero.astro";
     <li>
       <a
         href="https://www.youtube.com/@hastalatumba"
-        class=""
+        class="hover:text-yellow-400"
         title="Baila con nosotros en TikTok"
         target="_blank"
       >
@@ -78,7 +76,7 @@ import CtaHero from "../Cta/ctaHero.astro";
     <li>
       <a
         href="https://www.tiktok.com/@hastalatumba.cl"
-        class=""
+        class="hover:text-yellow-400"
         title="Sígue nuestro canal en Youtube "
         target="_blank"
       >
@@ -87,10 +85,10 @@ import CtaHero from "../Cta/ctaHero.astro";
     </li>
   </ul>
 </section>
-<div class="absolute bottom-0 w-full flex justify-center pb-4">
+<div class="absolute bottom-3 w-full flex justify-center z-10">
   <a
     href="#SliderHistorias"
-    class="text-center cursor-pointer animate-pulse animate-delay-75 text-white text-4xl"
+    class="text-center cursor-pointer animate-pulse animate-delay-75 text-red-500 text-4xl"
     ><i class="fas fa-angle-down"></i></a
   >
 </div>

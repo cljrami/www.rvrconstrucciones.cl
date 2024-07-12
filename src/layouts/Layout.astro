@@ -11,7 +11,7 @@ const navLinks = [
     href: "/que-es-hastalatumba",
     label: "¿Que Es Hastalatumba?",
   },
-  { href: "/déjanos-tu-historia", label: "Déjanos tu historia" },
+  { href: "/dejanos-tu-historia", label: "Déjanos tu historia" },
   { href: "/contacto", label: "Contáctanos" },
 ];
 
@@ -19,6 +19,7 @@ import Footer from "../components/Footer.astro";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import GoogleAnalitycs from "../components/GoogleAnalitycs.astro";
 import Favicon from "../components/Favicon.astro";
+import TagManager from "../components/TagManager.astro";
 ---
 
 <html lang="es" class="scroll-smooth focus:scroll-auto">
@@ -33,6 +34,10 @@ import Favicon from "../components/Favicon.astro";
   />
 
   <body>
+    <!-- Google tag (gtag.js) -->
+    <TagManager />
+
+    <!-- End Google Tag Manager (noscript) -->
     <slot />
     <header>
       <nav>

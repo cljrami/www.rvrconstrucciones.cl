@@ -1,0 +1,31 @@
+---
+export interface Props {
+  Titulo?: string;
+  Descripcion?: string;
+  imagen?: string;
+  url?: string;
+  alt?: string;
+  title?: string;
+}
+
+const {
+  Titulo = "",
+  Descripcion = "",
+  imagen = "",
+  url = "",
+  alt = "",
+  title = "",
+} = Astro.props;
+---
+
+<a href={url}><img src={imagen} alt={alt} title={title} class="rounded-md" /></a
+>
+
+<div>
+  <h2 class="text-xl text-red-500 font-bold mb-4">
+    <a href={url} class="hover:underline">{Titulo}</a>
+  </h2>
+  <p class="line-clamp-3">
+    {Descripcion}
+  </p>
+</div>

@@ -3,13 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import { AstroSeo } from "@astrolib/seo";
 import SliderConfesiones from "../components/Sliders/sliderConfesiones.jsx";
 import "../components/Sliders/sliderConfesiones.css";
+import SliderTestimonios from "../components/Sliders/sliderTestimonios.jsx";
 import EstaDisticas from "../components/estaDisticas.astro";
 import PreLoader from "../components/PreLoader.astro";
 import Hero from "../components/Heros/Hero.astro";
 import Marquee from "../components/marQuee.astro";
 import Faq from "../components/Faq.astro";
 import CtaPublicar from "../components/Cta/ctaPublicar.astro";
-import VideoPopup from "../components/Popups/videoPopup.astro";
+
+import SliderMercado from "../components/Sliders/sliderMercado.jsx";
+import "../components/Sliders/sliderMercado.css";
+import Cockies from "../components/Cockies.astro";
 ---
 
 <!doctype html>
@@ -17,7 +21,7 @@ import VideoPopup from "../components/Popups/videoPopup.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
     <meta
       name="keywords"
       content="confesiones anónimas, compartir secretos, secretos anónimos, confesiones online, Hasta la Tumba"
@@ -26,7 +30,7 @@ import VideoPopup from "../components/Popups/videoPopup.astro";
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
-      title="Confesiones Anónimas - Comparte tus Secretos de Forma Segura"
+      title="La Web De Los Confersiónes - Comparte tus Secretos de Forma Segura"
       description="Descubre y comparte confesiones anónimas de forma segura en HastalaTumba. Únete a nuestra comunidad global y encuentra apoyo y empatía"
       canonical="https://www.hastalatumba.cl/"
       openGraph={{
@@ -76,10 +80,10 @@ import VideoPopup from "../components/Popups/videoPopup.astro";
       <Hero
         h1Text="Confesiónes Anónimas"
         h1Classes="text-5xl md:text-5xl lg:text-7xl xl:text-9x1 font-bold text-white mb-5"
-        h2Text="¡Descubre el Secreto Mejor Guardado! Comparte tus Confesiones de Lujuria y Pasión en Total Anonimato "
+        h2Text="¡Descubre el Secreto Mejor Guardado! Comparte tus Confesiones de Lujuria y Pasión en Total Anonimato! "
         h2Classes="tracking-tight text-base sm:text-base md:text-2xl lg:text-2xl xl:text-3x1 text-slate-200 font-light"
-        sectionClasses="bg-[url('/Imagenes/fonDos/herohome.webp')] h-[900px] w-full bg-fixed bg-cover "
-        overlayClasses=" inset-0 bg-black opacity-60 h-[900px] w-full"
+        sectionClasses="bg-[url('/Imagenes/fonDos/herohombre.webp')]  w-full bg-fixed bg-cover "
+        overlayClasses=" inset-0 bg-black opacity-70 h-screen w-full"
         containerClasses="absolute inset-0 flex flex-col justify-center md:ml-16 ml-5 md:w-[650px] w-[400px] "
         fontAwesome="fas fa-lock"
         spanClasses="border-md bg-red-900 inline-block w-[210px]  my-3 p-4 font-bold text-base sm:text-2xl md:text-3xl lg:text-base "
@@ -90,10 +94,13 @@ import VideoPopup from "../components/Popups/videoPopup.astro";
       <SliderConfesiones client:load />
       <Marquee />
       <Faq />
-      <VideoPopup />
+      <SliderTestimonios client:load />
+      <Cockies />
+
+      <SliderMercado client:load />
       <CtaPublicar
         tituloCta="Comparte en nuestro sitio tus secretos más profundos y protégelos para siempre. La libertad de ser anónimo te espera."
-        classesTituloCta="tracking-tight  text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-8x1 font-bold"
+        classesTituloCta="tracking-tight  text-3xl  lg:text-5xl xl:text-8x1 mt-10 font-italic"
       />
     </main>
   </Layout>

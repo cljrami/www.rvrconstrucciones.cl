@@ -4,10 +4,10 @@
 >
   <div class="container">
     <div
-      class="flex flex-wrap items-center justify-between rounded-lg border bg-white dark:bg-gray-800 p-4"
+      class="flex flex-wrap items-center justify-between bg-black p-4 rounded-md backdrop-filter backdrop-blur bg-opacity-20"
     >
       <div class="w-full md:w-7/12 lg:w-2/3 flex items-center px-2">
-        <span class="text-indigo-500 mr-4">
+        <span class="text-red-500 mr-4">
           <svg
             stroke="currentColor"
             fill="none"
@@ -26,36 +26,26 @@
           </svg>
         </span>
         <div class="mb-6 md:mb-0">
-          <h3 class="text-lg font-bold text-black capitalize">
-            Usamos Cookies
-          </h3>
-          <p class="text-sm font-medium text-body-color text-black capitalize">
+          <h3 class="text-lg font-bold capitalize">Usamos Cookies</h3>
+          <p class="text-sm font-medium text-body-color">
             Acepta nuestras cookies para una mejor experiencia.
           </p>
         </div>
       </div>
-      <div class="w-full md:w-5/12 lg:w-1/3">
-        <div class="flex items-center space-x-3 md:justify-end">
+      <div class="w-full md:w-5/12 lg:w-1/3 w-3/3">
+        <div class="flex items-center space-x-3 justify-end">
           <button
-            class="button bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white rounded h-11 px-8 py-2"
+            class="button bg-black hover:bg-slate-800 text-white rounded h-11 px-8 py-2"
             id="accept-btn"
             aria-label="Aceptar"
           >
             Aceptar
           </button>
-          <button id="close-cookie-btn" class="bg-amber-400 rounded-full p-3">
-            <svg
-              class="h-6 w-6 text-black"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+          <button
+            id="close-cookie-btn"
+            class="bg-gray-600 p-3 rounded h-11 px-8 py-2 text-white"
+          >
+            Rechazar
           </button>
         </div>
       </div>

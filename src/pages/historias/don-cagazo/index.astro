@@ -13,11 +13,11 @@ import Historia from "./historia.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <!-- -<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
     <meta name="generator" content={Astro.generator} />
 
     <AstroSeo
-      title="La Colegiala"
+      title="Don Cagaszo"
       description="Libérate y cuenta tu secreto que ha nadie le contarías"
       canonical="https://www.hastalatumba.cl/historias/la-colegiala"
       openGraph={{
@@ -64,7 +64,7 @@ import Historia from "./historia.astro";
       <PreLoader preloaderText="Don Cagazo" />
 
       <HeroHistorias
-        sectionClasses="bg-[url('/Imagenes/portadas/heroHombre.webp')] h-screen w-full bg-cover flex justify-center items-center flex-col "
+        sectionClasses="bg-[url('/Imagenes/fonDos/herohombre.webp')] h-screen w-full bg-cover flex justify-center items-center flex-col  bg-fixed "
         overlayClasses=" absolute inset-0 bg-black opacity-70 h-screen w-full"
         h1Text="Don cagazo...."
         h1Classes="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] w-[80%]"
@@ -73,6 +73,8 @@ import Historia from "./historia.astro";
         linkSeccion="/historias"
         seccion="Historias"
         tituloSeccion="Don Cagazo"
+        arrow2="-"
+        arrow="-"
       />
     </main>
     <Historia />

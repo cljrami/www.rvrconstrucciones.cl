@@ -1,0 +1,298 @@
+<div
+  id="formModal"
+  class="fixed inset-0 bg-black rounded-md backdrop-filter backdrop-blur bg-opacity-30 overflow-y-auto h-full w-full hidden"
+>
+  <div
+    class="relative top-20 mx-auto p-5 border w-11/12 md:w-1/2 shadow-lg rounded-md"
+  >
+    <button
+      id="closeFormBtn"
+      class="absolute top-2 right-2 text-white hover:text-gray-700 text-md"
+    >
+      x
+    </button>
+    <div class="mt-3 text-center">
+      <div class="mt-2 px-7 py-3">
+        <form
+          id="stepForm"
+          action="/form/envioHistoria.php"
+          method="POST"
+          class="space-y-6"
+        >
+          <div id="formSteps">
+            <div class="step" data-step="1">
+              <label for="pseudonimo" class="block mb-2 text-4xl font-bold"
+                >¿Qué Pseudónimo Usarás?
+              </label>
+              <input
+                type="text"
+                id="pseudonimo"
+                name="pseudonimo"
+                placeholder="Cómo Te Llamarás?"
+                required
+                class="w-full p-2 border-b border-gray-300 rounded bg-transparent placeholder-white outline-none text-2xl mt-4"
+              />
+            </div>
+
+            <div class="step hidden" data-step="2">
+              <label for="edad" class="block mb-2 text-4xl font-bold"
+                >Edad</label
+              >
+              <input
+                type="text"
+                id="edad"
+                name="edad"
+                placeholder="Ingresa Tu Edad"
+                required
+                class="w-full p-2 border-b border-gray-300 rounded bg-transparent placeholder-white outline-none text-2xl mt-4"
+              />
+            </div>
+
+            <div class="step hidden" data-step="3">
+              <label for="genero" class="block mb-2 text-4xl font-bold"
+                >Género</label
+              >
+              <select
+                id="genero"
+                name="genero"
+                required
+                class="w-full p-2 border-b border-gray-300 rounded bg-transparent placeholder-white outline-none text-2xl mt-4"
+              >
+                <option value="femenino" class="bg-transparent">Femenino</option
+                >
+                <option value="masculino" class="bg-black">Masculino</option>
+                <option value="no-binario" class="bg-black">No binario</option>
+                <option value="genero-fluid" class="bg-black"
+                  >Género fluido</option
+                >
+                <option value="otro" class="bg-black">Otro</option>
+                <option value="prefiero-no-decir" class="bg-black"
+                  >Prefiero no decir</option
+                >
+              </select>
+            </div>
+
+            <div class="step hidden" data-step="4">
+              <label for="ciudad" class="block mb-2 text-4xl font-bold"
+                >Ciudad</label
+              >
+              <input
+                type="text"
+                id="ciudad"
+                name="ciudad"
+                placeholder="¿De Dónde Escribes?"
+                required
+                class="w-full p-2 border-b border-gray-300 rounded bg-transparent placeholder-white outline-none text-2xl mt-4"
+              />
+            </div>
+
+            <div class="step hidden" data-step="5">
+              <label for="titulo-historia" class="block mb-2 text-4xl font-bold"
+                >Título de la historia</label
+              >
+              <input
+                type="text"
+                id="titulo-historia"
+                name="titulo-historia"
+                placeholder="Título De Tu Historia"
+                required
+                class="w-full p-2 border-b border-gray-300 rounded bg-transparent placeholder-white outline-none text-2xl mt-4"
+              />
+            </div>
+
+            <div class="step hidden" data-step="6">
+              <label
+                for="subtitulo-historia"
+                class="block mb-2 text-4xl font-bold">Cita De Tu Historia</label
+              >
+              <input
+                type="text"
+                id="subtitulo-historia"
+                name="subtitulo-historia"
+                required
+                placeholder="Describe Brevemente Tu Historia"
+                class="w-full p-2 border-b border-gray-300 rounded bg-transparent placeholder-white outline-none text-2xl mt-4"
+              />
+            </div>
+
+            <div class="step hidden" data-step="7">
+              <label for="historia" class="block mb-2 text-4xl font-bold"
+                >Historia completa</label
+              >
+              <textarea
+                id="historia"
+                name="historia"
+                maxlength="10000"
+                rows="6"
+                required
+                class="w-full p-2 border border-gray-300 rounded bg-transparent placeholder-white outline-none text-base mt-4"
+              ></textarea>
+              <div class="mt-1 text-md text-white">
+                <span id="charCount">0</span>/10000 caracteres
+              </div>
+
+              <div class="mt-4">
+                <input
+                  type="checkbox"
+                  id="aceptar"
+                  name="aceptar"
+                  required
+                  class="mr-2"
+                />
+                <label for="aceptar" class="text-sm text-white">
+                  Acepto que esta historia será moderada antes de subirla y si
+                  cumple con los términos y condiciones del sitio será
+                  publicada.
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <button
+              type="button"
+              id="prevBtn"
+              class="px-4 py-2 font-bold text-white bg-gray-500 rounded hover:bg-gray-700 hidden"
+            >
+              Anterior
+            </button>
+            <button
+              type="button"
+              id="nextBtn"
+              class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+            >
+              Siguiente
+            </button>
+            <button
+              type="submit"
+              id="submitBtn"
+              class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 hidden"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    let currentStep = 1;
+    const totalSteps = document.querySelectorAll(".step").length;
+    const form = document.getElementById("stepForm") as HTMLFormElement;
+    const nextBtn = document.getElementById("nextBtn") as HTMLButtonElement;
+    const prevBtn = document.getElementById("prevBtn") as HTMLButtonElement;
+    const submitBtn = document.getElementById("submitBtn") as HTMLButtonElement;
+    const openFormBtn = document.getElementById(
+      "openFormBtn"
+    ) as HTMLButtonElement;
+    const closeFormBtn = document.getElementById(
+      "closeFormBtn"
+    ) as HTMLButtonElement;
+    const formModal = document.getElementById("formModal") as HTMLElement;
+
+    function showStep(step: number): void {
+      document
+        .querySelectorAll(".step")
+        .forEach((s) => s.classList.add("hidden"));
+      const currentStepElement = document.querySelector(
+        `.step[data-step="${step}"]`
+      ) as HTMLElement;
+      if (currentStepElement) {
+        currentStepElement.classList.remove("hidden");
+      }
+
+      if (prevBtn) prevBtn.classList.toggle("hidden", step === 1);
+      if (nextBtn) nextBtn.classList.toggle("hidden", step === totalSteps);
+      if (submitBtn) submitBtn.classList.toggle("hidden", step !== totalSteps);
+    }
+
+    function validateCurrentStep(): boolean {
+      const currentStepElement = document.querySelector(
+        `.step[data-step="${currentStep}"]`
+      ) as HTMLElement;
+      const input = currentStepElement.querySelector(
+        "input, select, textarea"
+      ) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+      if (input && "value" in input && !input.value.trim()) {
+        alert("Por favor, completa este campo antes de continuar.");
+        return false;
+      }
+      return true;
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        if (validateCurrentStep() && currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        if (currentStep > 1) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    }
+
+    if (form) {
+      form.addEventListener("submit", (e: Event) => {
+        e.preventDefault();
+        // Aquí puedes agregar la lógica para enviar el formulario
+        console.log("Formulario enviado");
+        if (formModal) formModal.classList.add("hidden");
+      });
+    }
+
+    if (openFormBtn && formModal) {
+      openFormBtn.addEventListener("click", () => {
+        formModal.classList.remove("hidden");
+        currentStep = 1;
+        showStep(currentStep);
+      });
+    }
+
+    if (closeFormBtn && formModal) {
+      closeFormBtn.addEventListener("click", () => {
+        formModal.classList.add("hidden");
+      });
+    }
+
+    const textarea = document.getElementById("historia") as HTMLTextAreaElement;
+    const charCount = document.getElementById("charCount");
+
+    if (textarea && charCount) {
+      textarea.addEventListener("input", function (this: HTMLTextAreaElement) {
+        if (charCount) charCount.textContent = this.value.length.toString();
+      });
+    }
+
+    // Placeholder behavior
+    const inputsWithPlaceholder = document.querySelectorAll(
+      'input[type="text"], input[type="email"], textarea'
+    );
+
+    inputsWithPlaceholder.forEach((input) => {
+      input.addEventListener(
+        "focus",
+        function (this: HTMLInputElement | HTMLTextAreaElement) {
+          this.placeholder = "";
+        }
+      );
+
+      input.addEventListener(
+        "blur",
+        function (this: HTMLInputElement | HTMLTextAreaElement) {
+          this.placeholder = this.getAttribute("data-placeholder") || "";
+        }
+      );
+    });
+
+    showStep(currentStep);
+  });
+</script>

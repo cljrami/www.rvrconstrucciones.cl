@@ -1,0 +1,104 @@
+---
+import Layout404 from "../layouts/404.astro";
+import { AstroSeo } from "@astrolib/seo";
+
+import "../components/Sliders/sliderConfesiones.css";
+
+import "../components/Sliders/sliderMercado.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
+    <meta
+      name="keywords"
+      content="confesiones anónimas, compartir secretos, secretos anónimos, confesiones online, Hasta la Tumba"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <AstroSeo
+      title="Recurso No Encontrado- Error 404"
+      description="Descubre y comparte confesiones anónimas de forma segura en HastalaTumba. Únete a nuestra comunidad global y encuentra apoyo y empatía"
+      canonical="https://www.hastalatumba.cl/"
+      openGraph={{
+        url: "https://www.hastalatumba.cl/",
+        type: "website",
+        title: "Confesiones Anónimas - Comparte tus Secretos de Forma Segura",
+        description:
+          "Confiesa tus secretos más profundos de forma anónima y segura. Lee confesiones de otros y comparte tus experiencias en nuestra plataforma.",
+        images: [
+          {
+            url: "https://www.hastalatumba.cl/OgImage.webp",
+            width: 1240,
+            height: 630,
+            alt: "Libérate y cuenta tu secreto que ha nadie le contarías",
+            type: "image/webp",
+          },
+        ],
+        site_name: "Hasta La Tumba",
+      }}
+      twitter={{
+        handle: "@handle",
+        site: "@site",
+        cardType: "summary_large_image",
+      }}
+    />
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "",
+            "item": "www.hastalatumba.cl"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <Layout404 title="">
+    <main>
+      <div
+        id="preloader"
+        class="fixed top-0 left-0 w-full flex justify-center items-center bg-black z-50 w-100 h-screen"
+      >
+        <div
+          class="bg-[url('/Imagenes/preLoader/smoke_layer_2.webp')] bg-cover absolute h-screen flex w-full animate-fade"
+        >
+        </div>
+        <div
+          class="bg-[url('/Imagenes/preLoader/smoke-bg.webp')] -z-10 bg-cover absolute h-screen flex w-full animate-fade"
+        >
+        </div>
+        <div class="flex flex-col">
+          <dpan
+            class="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%] pb-2"
+          >
+            Error 404 :(
+          </dpan>
+          <span
+            class="text-white font-black tracking-tight text-5xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8x1 text-center filter blur-[3px] contrast-[120%]"
+          >
+            Recurso No Encontrado
+          </span>
+          <span
+            class="text-white font-light tracking-tight text-xl filter blur-[0px] contrast-[120%] text-right"
+          >
+            <a href="/" class="text-yellow-500 animate-pulse hover:underline">
+              Volver Al Purgatorio</a
+            >
+          </span>
+        </div>
+      </div>
+    </main>
+  </Layout404>
+
+
+</html>

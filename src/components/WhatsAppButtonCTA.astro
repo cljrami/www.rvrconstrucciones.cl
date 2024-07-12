@@ -13,12 +13,11 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
   aria-label="Nuestro WhatsApp"
   target="_blank"
   id="whatsapp-btn"
-  class="fixed bottom-4 right-4 flex items-center justify-center bg-white rounded-full shadow-lg p-2 cursor-pointer border-4 border-transparent hover:border-green-500 transition-all duration-300"
-  style="opacity: 0; visibility: hidden;"
+  class="fixed bottom-4 right-4 flex items-center justify-center bg-black backdrop-filter backdrop-blur bg-opacity-20 rounded-full shadow-lg p-2 cursor-pointer border-4 border-transparent transition-all duration-300 text-yellow-400 font-extrabold text-5xl animate-pulse"
+  style=" "
 >
-  <div
-    class="h-10 w-10 rounded-full flex items-center justify-center bg-[url('https://www.ahoranow.cl/Imagenes/contacto_con_ahoranow.webp')] bg-no-repeat bg-center bg-cover"
-  >
+  <div class="h-20 w-20 rounded-full flex items-center justify-center">
+    <i class="fab fa-whatsapp"></i>
     <!-- Aquí estaba el SVG, ahora eliminado -->
   </div>
 </a>

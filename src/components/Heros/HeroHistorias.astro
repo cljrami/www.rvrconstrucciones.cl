@@ -14,6 +14,9 @@ export interface Props {
   linkSeccion?: string;
   seccion?: string;
   tituloSeccion?: string;
+  arrow?: string;
+  arrow2?: string;
+  Opcion1tml?: string;
 }
 
 const {
@@ -27,6 +30,9 @@ const {
   linkSeccion = "",
   seccion = "",
   tituloSeccion = "",
+  arrow = "",
+  arrow2 = "",
+  Opcion1tml = "",
 } = Astro.props;
 ---
 
@@ -42,7 +48,7 @@ const {
     role="navigation"
     class="relative"
   >
-    <ul class="flex flex-wrap mt-2 uppercase">
+    <ul class="flex flex-wrap mt-5 uppercase gap-2">
       <li class="inline-flex">
         <a
           href={HomeLink}
@@ -50,19 +56,20 @@ const {
           class="inline-flex font-medium text-white"
         >
           <!-- <i class={`${fontAwesome} `}></i> -->
-          <span class="px-1 text-gray-400">{NombreHomeLink} </span>
+          <span class="text-gray-400">{NombreHomeLink} </span>
         </a>
       </li>
-      <li class="flex">
+      <li>
+        {arrow}
         <a href={linkSeccion} class="font-medium text-gray-400 hover:underline">
-          <i class="fas fa-angle-right"></i>
           {seccion}
-          <i class="fas fa-angle-right"></i>
         </a>
+        {arrow2}
       </li>
       <li class="flex">
-        <span class="px-1 text-white">{tituloSeccion} </span>
+        <span class="text-white">{tituloSeccion} </span>
       </li>
     </ul>
   </section>
+  <div set:html={Opcion1tml} />
 </section>

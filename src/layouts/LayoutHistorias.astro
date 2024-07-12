@@ -1,0 +1,47 @@
+---
+import "../../src/styles/global.css";
+import NavBar from "../components/Navbar/NavBar.astro";
+const navLinks = [
+  { href: "/", label: "Inicio" },
+  {
+    href: "/historias",
+    label: "Historias",
+  },
+  {
+    href: "/que-es-hastalatumba",
+    label: "¿Que Es Hastalatumba?",
+  },
+  { href: "/dejanos-tu-historia", label: "Déjanos tu historia" },
+  { href: "/contacto", label: "Contáctanos" },
+];
+
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import GoogleAnalitycs from "../components/GoogleAnalitycs.astro";
+import Favicon from "../components/Favicon.astro";
+import TagManager from "../components/TagManager.astro";
+---
+
+<html lang="es" class="scroll-smooth focus:scroll-auto">
+  <Favicon />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <!--GOGOLE FONTS -->
+  <!-- Establece una conexión temprana con el origen de Google Fonts -->
+  <GoogleAnalitycs />
+  <GoogleFontsOptimizer
+    url="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap async"
+  />
+
+  <body>
+    <!-- Google tag (gtag.js) -->
+    <TagManager />
+    <slot />
+    <header>
+      <nav>
+        <NavBar textoLogo="hastalatumba" links={navLinks} />
+      </nav>
+    </header>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
