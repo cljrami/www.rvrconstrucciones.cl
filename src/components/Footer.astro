@@ -1,5 +1,6 @@
 ---
 //Footer
+import RedesSociales from "./RedesSociales.astro";
 ---
 
 <section class="text-center mt-40" id="footer">
@@ -20,32 +21,15 @@
     Comparte en nuestro sitio tus secretos más profundos y protégelos para
     siempre. La libertad de ser anónimo te espera.
   </h4>
-  <h4 class="mt-6 text-lg text-slate-400">
-    Síguenos en nuestras redes sociales
-  </h4>
 
-  <div class="flex justify-center gap-6 my-3">
-    <a href=""
-      ><i
-        class="fab fa-tiktok text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl"
-      ></i></a
-    >
-    <a href="">
-      <i
-        class="fab fa-youtube text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl"
-      ></i>
-    </a>
-    <a href="">
-      <i
-        class="fab fa-facebook text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl"
-      ></i>
-    </a>
-    <a href="">
-      <i
-        class="fab fa-instagram text-white border-white hover:border-yellow-300 hover:text-yellow-300 font-bold p-2 text-2xl"
-      ></i>
-    </a>
-  </div>
+  <RedesSociales
+    instaGram="https://www.instagram.com/hastalatumba.cl/"
+    faceBook="https://www.facebook.com/hastalatumba.cl"
+    X=""
+    youTube="https://www.youtube.com/@hastalatumba"
+    linKedin=""
+    tikTok="https://www.tiktok.com/@hastalatumba.cl"
+  />
 
   <h4 class="text-gray-500 text-lg mb-7">
     Hecho con <i class="fas fa-heart text-red-400"></i> desde Concepción

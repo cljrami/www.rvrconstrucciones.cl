@@ -74,11 +74,10 @@ const SliderTestimonios = () => {
             >
               <SwiperSlide>
                 <TarjetaTestimonios
-                  nombre="juana"
-                  testimonio="sadsadsadsad sada dsad dsad
-                sad sadsadsadsa
-                dsadsad sad sad sadsadsad sadsadsa das asdads"
+                  nombre="La Colegiala"
+                  testimonio="Interesantes Propuesta.... YO Ya conté mi historia "
                   ciudad="Temuco"
+                  imagen="/Imagenes/portadas/historiaMujer.webp"
                 />
               </SwiperSlide>
               <SwiperSlide>
