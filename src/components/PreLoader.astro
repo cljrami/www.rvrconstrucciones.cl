@@ -5,6 +5,7 @@ export interface Props {
 }
 
 const { preloaderText = "" } = Astro.props;
+import RedesSociales from "./RedesSociales.astro";
 ---
 
 <script>
@@ -17,7 +18,7 @@ const { preloaderText = "" } = Astro.props;
 
 <div
   id="preloader"
-  class="fixed top-0 left-0 w-full flex justify-center items-center bg-black z-50 w-100 h-screen"
+  class="fixed top-0 left-0 w-full flex justify-center items-center bg-black z-50 w-100 h-screen flex-col"
 >
   <div
     class="bg-[url('/Imagenes/preLoader/smoke_layer_2.webp')] bg-cover absolute h-screen flex w-full animate-fade"
@@ -32,4 +33,9 @@ const { preloaderText = "" } = Astro.props;
   >
     {preloaderText}
   </dpan>
+  <RedesSociales />
+  <div
+    class="animate-spin rounded-full h-16 w-16 border-t-4 mt-8 border-red-900 filter blur-[3px] contrast-[120%]"
+  >
+  </div>
 </div>

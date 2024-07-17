@@ -2,27 +2,24 @@
 import AccordionFaq from "./accordionns/accordionFaq.astro";
 ---
 
-<section class="p-4 py-24 max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
-  <div class="flex flex-col text-left basis-1/2">
-    <h3 class="inline-block text-gray-400 mb-4 text-md">FAQ</h3>
-    <h3 class="text-5xl">Preguntas y Respuestas</h3>
-  </div>
-  <ul class="basis-1/2">
-    <AccordionFaq
-      pregunta="¿Cómo puedo compartir mi historia?"
-      respuesta="Envía tu historia a historias@hastalatumba.cl"
-    />
-    <AccordionFaq
-      pregunta="¿De que se trata hlt?"
-      respuesta="Este sitio web es una plataforma diseñada para permitir que las personas compartan sus experiencias, pensamientos o sentimientos de forma totalmente anónima y confidencial."
-    />
-    <AccordionFaq
-      pregunta="¿Cómo funciona la anonimidad en este sitio?"
-      respuesta="Garantizamos el anonimato absoluto al no requerir ningún tipo de información personal identificable. No es necesario proporcionar nombre, correo electrónico ni ningún otro dato personal."
-    />
-    <AccordionFaq
-      pregunta="¿Qué tipo de cosas puedo compartir en este sitio?"
-      respuesta="Puedes compartir cualquier cosa que desees, como historias personales, desafíos que enfrentas, reflexiones, o simplemente expresar tus pensamientos sin preocuparte por revelar tu identidad."
-    />
-  </ul>
+<script src="//unpkg.com/alpinejs" is:inline></script>
+<section class="md:max-w-7xl mx-auto p-4" id="preguntasFrecuentes">
+  <h3 class="inline-block text-gray-400 mb-4 text-md">Preguntas Frecuentes</h3>
+  <h3 class="text-5xl">Preguntas y Respuestas</h3>
+  <AccordionFaq
+    pregunta="¿Cómo puedo compartir mi historia?"
+    respuesta="Envía tu historia a <a href=mailto:historias@hastalatumba.cl>historias@hastalatumba.cl</a><br/>O ház click en el <a href=/dejanos-tu-historia class='text-blue-500 hover:underline'>siguiente link</a> "
+  />
+  <AccordionFaq
+    pregunta="¿De que se trata hlt?"
+    respuesta="Este sitio web es una plataforma diseñada para permitir que las personas compartan sus experiencias, pensamientos o sentimientos de forma totalmente anónima y confidencial."
+  />
+  <AccordionFaq
+    pregunta="¿Cómo funciona la anonimidad en este sitio?"
+    respuesta="Garantizamos el anonimato absoluto al no requerir ningún tipo de información personal identificable. No es necesario proporcionar nombre, correo electrónico ni ningún otro dato personal."
+  />
+  <AccordionFaq
+    pregunta="¿Qué tipo de cosas puedo compartir en este sitio?"
+    respuesta="Puedes compartir cualquier cosa que desees, como historias personales, desafíos que enfrentas, reflexiones, o simplemente expresar tus pensamientos sin preocuparte por revelar tu identidad."
+  />
 </section>

@@ -2,11 +2,9 @@
 export interface Props {
   tituloCta?: string;
   textoCta?: string;
-
-  fontAwesome?: string;
 }
 
-const { tituloCta = "", fontAwesome = "", textoCta = "" } = Astro.props;
+const { tituloCta = "", textoCta = "" } = Astro.props;
 ---
 
 <div class="relative py-16">
